@@ -1,0 +1,23 @@
+﻿<Window x:Class="HotelAIS.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelAIS.Windows"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Line Height="100"/>
+            <TextBlock Text="Аутентификация" FontSize="18" Margin="282,0,273,0" TextAlignment="Center"/>
+            <Line Height="20"/>
+            <TextBox x:Name="UserName" Text="Имя пользователя" Margin="282,0,273,0"/>
+            <Line Height="10"/>
+            <TextBox x:Name="UserPassword" Text="Пароль" Margin="282,0,273,0"/>
+            <Line Height="20"/>
+            <Button x:Name="LoginButton" Content="Войти" Margin="282,0,273,0" Click="LoginButton_Click"/>
+            <Line Height="10"/>
+            <Button x:Name="RegistrationButton" Content="Зарегистрироваться" Margin="282,0,273,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

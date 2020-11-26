@@ -1,0 +1,31 @@
+﻿<Window x:Class="HotelAIS.Windows.ClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelAIS.Windows"
+        mc:Ignorable="d"
+        Title="ClientsWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <ScrollViewer Height="348">
+                <StackPanel VerticalAlignment="Top">
+                    <DataGrid x:Name="ClientsData" HeadersVisibility="All">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Номер" Binding="{Binding Path=id}" MinWidth="50"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding Path=FullName}" MinWidth="50"/>
+                            <DataGridTextColumn Header="Номер комнаты" Binding="{Binding Path=RoomId}" MinWidth="50"/>
+                            <DataGridTextColumn Header="Окончание аренды" Binding="{Binding Path=RentEndTime}" MinWidth="50"/>
+                            <DataGridTextColumn Header="Плата" Binding="{Binding Path=Price}" MinWidth="50"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+            <Line Height="20"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="AddClientButton" Content="Добавить клиента" Width="111" Margin="10, 0, 0, 0"/>
+                <Button x:Name="ReturnButton" Content="Назад" Width="79" Height="27" Margin="590, 0, 0, 0" Click="ReturnButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
