@@ -66,6 +66,12 @@
     <Compile Include="Windows\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ForMaid\ActionsForMaid.xaml.cs">
+      <DependentUpon>ActionsForMaid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForMaid\NeedCleanRooms.xaml.cs">
+      <DependentUpon>NeedCleanRooms.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -108,6 +114,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ForMaid\ActionsForMaid.xaml" />
+    <Page Include="Windows\ForMaid\NeedCleanRooms.xaml" />
     <Page Include="Windows\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +125,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Windows\ForAdmin" />
+    <Folder Include="Windows\ForDirector" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,15 @@
+<Window x:Class="HotelAIS.Windows.ForMaid.NeedCleanRooms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
+        mc:Ignorable="d"
+        Title="NeedCleanRooms" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <DataGrid/>
+            <Button x:Name="ReturnButton" Content="Назад" Click="ReturnButton_OnClick" Margin="318,10" />
+        </StackPanel>
+    </Grid>
+</Window>
