@@ -1,0 +1,27 @@
+<Window x:Class="HotelAIS.Windows.ForMaid.ActionsForMaid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
+        mc:Ignorable="d"
+        Title="ActionsForMaid" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Меню действий для горничной" FontSize="18" HorizontalAlignment="Center" />
+            <Line Height="30" />
+
+            <TextBlock Text="Введите номер комнаты" FontSize="16" HorizontalAlignment="Center" />
+
+            <TextBox x:Name="NumberField" MaxLength="3" TextChanged="TextBoxBase_OnTextChanged" Margin="276,10"> Номер комнаты </TextBox>
+
+            <Button x:Name="CleanBtn" Content="Убрана" Click="CleanBtn_OnClick" Margin="276,10" />
+
+            <Button x:Name="NeedCleanBtn" Content="Требуется уборка" Click="NeedCleanBtn_OnClick" Margin="276,10" />
+
+            <Button x:Name="ShowDirtRoom" Content="Показать комнаты в которых требуется уборка" Click="ShowDirtRoom_OnClick" Margin="250,70" />
+            <Line Height="30" />
+            <Button x:Name="ReturnButton" Content="Назад" Click="ReturnButton_OnClick" Margin="318,10" />
+        </StackPanel>
+    </Grid>
+</Window>
