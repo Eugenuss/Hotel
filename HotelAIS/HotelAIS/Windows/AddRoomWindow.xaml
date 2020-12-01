@@ -1,0 +1,33 @@
+﻿<Window x:Class="HotelAIS.Windows.AddRoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelAIS.Windows"
+        mc:Ignorable="d"
+        Title="AddRoomWindow" Height="158.584" Width="270.03">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="161*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <TextBlock>
+                <Label Content="Номер комнаты:" Width="116"/>
+                <TextBox x:Name="RoomNumTextBox" Width="130"/>
+            </TextBlock>
+            <TextBlock>
+                <Label Content="Количество мест:" Width="116"/>
+                <TextBox x:Name="RoomPersonNumTextBox" Width="130"/>
+            </TextBlock>
+            <TextBlock>
+                <Label Content="Стоимость за день:"/>
+                <TextBox x:Name="CostTextBox" Width="130"/>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Button x:Name="SaveButton" Content="Добавить" Margin="10,92,90,10" Width="88" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButton" Content="Отменить" Margin="0,92,0,10" Width="67" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

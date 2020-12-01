@@ -32,15 +32,18 @@ namespace HotelAIS.Windows
             roomsWindow.Show();
         }
 
-        private void ClientsButton_Clicked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ReturnButton_Clicked(object sender, RoutedEventArgs e)
         {
             this.Owner.Show();
             this.Close();
+        }
+
+        private void UserButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            Window usersWindow = new UsersWindow();
+            usersWindow.Owner = this;
+            this.Hide();
+            usersWindow.Show();
         }
     }
 }
