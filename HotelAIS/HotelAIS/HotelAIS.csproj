@@ -83,9 +83,6 @@
     <Compile Include="Windows\AdminMainWindow.xaml.cs">
       <DependentUpon>AdminMainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ClientsWindow.xaml.cs">
-      <DependentUpon>ClientsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\ForDirector\ActionsForDirector.xaml.cs">
       <DependentUpon>ActionsForDirector.xaml</DependentUpon>
     </Compile>
