@@ -35,6 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Geared, Version=1.2.8.2, Culture=neutral, PublicKeyToken=7292f245d14ab8bf">
+      <HintPath>..\packages\LiveCharts.Geared.1.2.9\lib\net45\LiveCharts.Geared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -60,11 +72,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Room.cs" />
+    <Compile Include="ScrollableVm.cs" />
     <Compile Include="Windows\AdminMainWindow.xaml.cs">
       <DependentUpon>AdminMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForDirector\ActionsForDirector.xaml.cs">
+      <DependentUpon>ActionsForDirector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForDirector\StatisticMoney.xaml.cs">
+      <DependentUpon>StatisticMoney.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ForMaid\ActionsForMaid.xaml.cs">
       <DependentUpon>ActionsForMaid.xaml</DependentUpon>
@@ -97,6 +116,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +134,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ForDirector\ActionsForDirector.xaml" />
+    <Page Include="Windows\ForDirector\StatisticMoney.xaml" />
     <Page Include="Windows\ForMaid\ActionsForMaid.xaml" />
     <Page Include="Windows\ForMaid\NeedCleanRooms.xaml" />
     <Page Include="Windows\LoginWindow.xaml">
@@ -127,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Windows\ForAdmin" />
-    <Folder Include="Windows\ForDirector" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
