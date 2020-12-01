@@ -59,6 +59,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Guests.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Windows\AdminMainWindow.xaml.cs">
       <DependentUpon>AdminMainWindow.xaml</DependentUpon>
@@ -68,6 +69,21 @@
     </Compile>
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\AddGuest.xaml.cs">
+      <DependentUpon>AddGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\ChangeInfAboutGuest.xaml.cs">
+      <DependentUpon>ChangeInfAboutGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\ChangeInfAboutRoom.xaml.cs">
+      <DependentUpon>ChangeInfAboutRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\MenuFreeRoom.xaml.cs">
+      <DependentUpon>MenuFreeRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\ReceptionActions.xaml.cs">
+      <DependentUpon>ReceptionActions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\RoomsWindow.xaml.cs">
       <DependentUpon>RoomsWindow.xaml</DependentUpon>
@@ -112,11 +128,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Reception\AddGuest.xaml" />
+    <Page Include="Windows\Reception\ChangeInfAboutGuest.xaml" />
+    <Page Include="Windows\Reception\ChangeInfAboutRoom.xaml" />
+    <Page Include="Windows\Reception\MenuFreeRoom.xaml" />
+    <Page Include="Windows\Reception\ReceptionActions.xaml" />
     <Page Include="Windows\RoomsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
