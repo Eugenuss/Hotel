@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HotelAIS.Windows
 {
     /// <summary>
-    /// Interaction logic for RoomsWindow.xaml
+    /// Interaction logic for UsersWindow.xaml
     /// </summary>
-    public partial class RoomsWindow : Window
+    public partial class UsersWindow : Window
     {
-        public RoomsWindow()
+        public UsersWindow()
         {
             InitializeComponent();
             UpdateTable();
@@ -31,26 +31,26 @@ namespace HotelAIS.Windows
             this.Close();
         }
 
-        private void AddRoomButton_Click(object sender, RoutedEventArgs e)
+        private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
-            int newRoomId = XApp.rooms.Count;
-            Room newRoom = new Room(newRoomId);
-            XApp.rooms.Add(newRoom);
+            int newRoomId = XApp.users.Count;
+            User newUser = new User(XApp.users.Count, "", "", "");
+            XApp.users.Add(newUser);
 
-            Window addRoomWindow = new AddRoomWindow(newRoom, this);
-            addRoomWindow.Show();
+            Window addUserWindow = new AddUserWindow(newUser, this);
+            addUserWindow.Show();
         }
 
         public void UpdateTable()
         {
-            RoomsData.ItemsSource = null;
-            RoomsData.ItemsSource = XApp.rooms;
+            UsersData.ItemsSource = null;
+            UsersData.ItemsSource = XApp.users;
         }
 
-        private void DelRoomButton_Click(object sender, RoutedEventArgs e)
+        private void DelUserButton_Click(object sender, RoutedEventArgs e)
         {
-            Room selectedRoom = (Room)RoomsData.SelectedItem;
-            XApp.rooms.Remove(selectedRoom);
+            User selectedUser = (User)UsersData.SelectedItem;
+            XApp.users.Remove(selectedUser);
             UpdateTable();
         }
     }

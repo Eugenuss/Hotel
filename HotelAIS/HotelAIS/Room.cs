@@ -8,15 +8,22 @@ namespace HotelAIS
 {
     public class Room
     {
-        public Room(int id, string status, DateTime rateEndTime)
+        public Room(int id)
         {
             this.id = id;
-            this.status = status;
-            this.rateEndTime = rateEndTime;
+
+            this.personCount = 1;
+            this.cost = 0;
+            busyStatus = "свободна";
+            cleanStatus = "прибрана";
+            bookingStatus = "незабронирована";
         }
 
         public int id { get; set; }
-        public string status { get; set; }
-        public DateTime rateEndTime { get; set; }
+        public string busyStatus { get; set; }
+        public int personCount { get; set; }
+        public string cleanStatus { get; set; }
+        public string bookingStatus { get; set; }
+        public int cost { get; set; }
     }
 }

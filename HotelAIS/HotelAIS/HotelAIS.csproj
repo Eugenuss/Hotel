@@ -71,13 +71,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Guests.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Windows\AddRoomWindow.xaml.cs">
+      <DependentUpon>AddRoomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddUserWindow.xaml.cs">
+      <DependentUpon>AddUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScrollableVm.cs" />
     <Compile Include="Windows\AdminMainWindow.xaml.cs">
       <DependentUpon>AdminMainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\ClientsWindow.xaml.cs">
-      <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ForDirector\ActionsForDirector.xaml.cs">
       <DependentUpon>ActionsForDirector.xaml</DependentUpon>
@@ -94,9 +99,28 @@
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Reception\AddGuest.xaml.cs">
+      <DependentUpon>AddGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\ChangeInfAboutGuest.xaml.cs">
+      <DependentUpon>ChangeInfAboutGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\ChangeInfAboutRoom.xaml.cs">
+      <DependentUpon>ChangeInfAboutRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\MenuFreeRoom.xaml.cs">
+      <DependentUpon>MenuFreeRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reception\ReceptionActions.xaml.cs">
+      <DependentUpon>ReceptionActions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RoomsWindow.xaml.cs">
       <DependentUpon>RoomsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UsersWindow.xaml.cs">
+      <DependentUpon>UsersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -126,11 +150,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Windows\AdminMainWindow.xaml">
+    <Page Include="Windows\AddRoomWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ClientsWindow.xaml">
+    <Page Include="Windows\AddUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,7 +170,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Reception\AddGuest.xaml" />
+    <Page Include="Windows\Reception\ChangeInfAboutGuest.xaml" />
+    <Page Include="Windows\Reception\ChangeInfAboutRoom.xaml" />
+    <Page Include="Windows\Reception\MenuFreeRoom.xaml" />
+    <Page Include="Windows\Reception\ReceptionActions.xaml" />
     <Page Include="Windows\RoomsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UsersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

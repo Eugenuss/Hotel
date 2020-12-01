@@ -26,10 +26,30 @@ namespace HotelAIS.Windows
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            Window adminMainWindow = new AdminMainWindow();
-            adminMainWindow.Owner = this;
-            this.Hide();
-            adminMainWindow.Show();
+            if (CheckAuth())
+            {
+                Window adminMainWindow = new AdminMainWindow();
+                adminMainWindow.Owner = this;
+                this.Hide();
+                adminMainWindow.Show();
+            }
+        }
+
+        public bool CheckAuth()
+        {
+            foreach (User u in XApp.users)
+            {
+                if (u.login == UserName.Text)
+                {
+                    if (u.password == UserPassword.Text)
+                    {
+                        if (u.role == "admin")
+                            return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

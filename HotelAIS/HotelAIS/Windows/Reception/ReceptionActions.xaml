@@ -1,0 +1,29 @@
+﻿<Window x:Class="HotelAIS.Windows.Reception.ReceptionActions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
+        mc:Ignorable="d"
+        Title="ReceptionActions" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Название" FontSize="18"/>
+            <Line Height="50"/>
+            <Button x:Name="FreeRoomsBut" Content="Показать свободные комнаты" 
+                    Click="FreeRoomsBut_Click" Margin="276,0"/>
+            <Line Height="10"/>
+            <Button x:Name="ChangeRoomStatBut" Content="Изменить статус комнаты" 
+                    Click="ChangeRoomStatBut_Click" Margin="276,0"/>
+            <TextBox x:Name="UserName" Text="Номер комнаты" Margin="540,-18,140,0"/>
+            <Line Height="10"/>
+            <Button x:Name="AddGuestBut" Content="Добавить гостя" 
+                    Click="AddGuestBut_Click" Margin="276,0"/>
+            <Line Height="10"/>
+            <Button x:Name="ChangeGuestInf" Content="Изменить информацию о госте" 
+                    Click="ChangeGuestBut_Click" Margin="276,0"/>
+            <Button x:Name="ReturnButton" Content="Назад" 
+                    Click="ReturnButton_Click" Margin="318,10,320,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
