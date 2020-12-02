@@ -2,11 +2,24 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:HotelAIS"
-             StartupUri="Windows/ForDirector/ActionsForDirector.xaml"> <!--Windows/LoginWindow.xaml-->
+             StartupUri="Windows/ForMaid/ActionsForMaid.xaml"> <!--Windows/LoginWindow.xaml-->
     <!-- 
-
-
-
+    
+    Windows/ForAdmin/AddRoomWindow.xaml
+    Windows/ForAdmin/AddUserWindow.xaml
+    Windows/ForAdmin/AdminMainWindow.xaml
+    Windows/ForAdmin/LoginWindow.xaml
+    Windows/ForAdmin/RoomsWindow.xaml
+    Windows/ForAdmin/UsersWindow.xaml
+Windows/ForDirector/ActionsForDirector.xaml
+Windows/ForDirector/StatisticMoney.xaml
+    Windows/ForMaid/ActionsForMaid.xaml
+    Windows/ForMaid/NeedCleanRooms.xaml
+Windows/Reception/AddGuest.xaml
+Windows/Reception/ChangeInfAboutGuest.xaml
+Windows/Reception/ChangeInfAboutRoom.xaml
+Windows/Reception/MenuFreeRoom.xaml
+Windows/Reception/ReceptionActions.xaml
 
 
 -->

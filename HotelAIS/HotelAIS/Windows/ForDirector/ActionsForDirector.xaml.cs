@@ -14,8 +14,8 @@ namespace HotelAIS.Windows.ForDirector
 
         private void StatisticMoneyBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            UserControl statisticMoney = new StatisticMoney();
-            statisticMoney.IsEnabled = false;
+            // UserControl statisticMoney = new StatisticMoney();
+            // statisticMoney.IsEnabled = false;
 
         }
 

@@ -11,7 +11,7 @@ namespace HotelAIS.Windows.ForMaid
 
         private void ReturnButton_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.Close();
         }
     }
 }

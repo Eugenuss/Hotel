@@ -74,15 +74,24 @@
     <Compile Include="Guests.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Windows\AddRoomWindow.xaml.cs">
+    <Compile Include="ScrollableVm.cs" />
+    <Compile Include="Windows\ForAdmin\AddRoomWindow.xaml.cs">
       <DependentUpon>AddRoomWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AddUserWindow.xaml.cs">
+    <Compile Include="Windows\ForAdmin\AddUserWindow.xaml.cs">
       <DependentUpon>AddUserWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ScrollableVm.cs" />
-    <Compile Include="Windows\AdminMainWindow.xaml.cs">
+    <Compile Include="Windows\ForAdmin\AdminMainWindow.xaml.cs">
       <DependentUpon>AdminMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdmin\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdmin\RoomsWindow.xaml.cs">
+      <DependentUpon>RoomsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdmin\UsersWindow.xaml.cs">
+      <DependentUpon>UsersWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ForDirector\ActionsForDirector.xaml.cs">
       <DependentUpon>ActionsForDirector.xaml</DependentUpon>
@@ -95,9 +104,6 @@
     </Compile>
     <Compile Include="Windows\ForMaid\NeedCleanRooms.xaml.cs">
       <DependentUpon>NeedCleanRooms.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Reception\AddGuest.xaml.cs">
       <DependentUpon>AddGuest.xaml</DependentUpon>
@@ -113,12 +119,6 @@
     </Compile>
     <Compile Include="Windows\Reception\ReceptionActions.xaml.cs">
       <DependentUpon>ReceptionActions.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\RoomsWindow.xaml.cs">
-      <DependentUpon>RoomsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\UsersWindow.xaml.cs">
-      <DependentUpon>UsersWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="XApp.cs" />
   </ItemGroup>
@@ -150,15 +150,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Windows\AddRoomWindow.xaml">
+    <Page Include="Windows\ForAdmin\AddRoomWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AddUserWindow.xaml">
+    <Page Include="Windows\ForAdmin\AddUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AdminMainWindow.xaml">
+    <Page Include="Windows\ForAdmin\AdminMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdmin\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdmin\RoomsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdmin\UsersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,26 +178,11 @@
     <Page Include="Windows\ForDirector\StatisticMoney.xaml" />
     <Page Include="Windows\ForMaid\ActionsForMaid.xaml" />
     <Page Include="Windows\ForMaid\NeedCleanRooms.xaml" />
-    <Page Include="Windows\LoginWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\Reception\AddGuest.xaml" />
     <Page Include="Windows\Reception\ChangeInfAboutGuest.xaml" />
     <Page Include="Windows\Reception\ChangeInfAboutRoom.xaml" />
     <Page Include="Windows\Reception\MenuFreeRoom.xaml" />
     <Page Include="Windows\Reception\ReceptionActions.xaml" />
-    <Page Include="Windows\RoomsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\UsersWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\ForAdmin" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

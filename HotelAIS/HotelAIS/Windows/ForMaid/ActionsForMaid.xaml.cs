@@ -1,5 +1,5 @@
 using System.Windows;
-using System.Windows.Controls;
+
 
 namespace HotelAIS.Windows.ForMaid
 {
@@ -9,11 +9,8 @@ namespace HotelAIS.Windows.ForMaid
         {
             InitializeComponent();
         }
-
-        private void TextBoxBase_OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
+        
 
         private void CleanBtn_OnClick(object sender, RoutedEventArgs e)
         {
@@ -27,12 +24,17 @@ namespace HotelAIS.Windows.ForMaid
 
         private void ShowDirtRoom_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Window needCleanRooms = new NeedCleanRooms();
+            needCleanRooms.Owner = this;
+            needCleanRooms.Show();
+            
         }
 
         private void ReturnButton_OnClick(object sender, RoutedEventArgs e)
         {
             throw new System.NotImplementedException();
         }
+
+        
     }
 }
