@@ -7,13 +7,13 @@ using LiveCharts.Wpf;
 
 namespace Wpf.CartesianChart.Basic_Bars
 {
-    public partial class StatisticMoney : Window/*UserControl*/
+    public partial class StatisticGuests : Window/*UserControl*/
     {
         static DateTime dateFrom = Convert.ToDateTime("02.12.2020");
         static DateTime dateTo = Convert.ToDateTime("01.01.2021");
         double daysBetween = (dateTo - dateFrom).TotalDays;
 
-        public StatisticMoney()
+        public StatisticGuests()
         {
             InitializeComponent();
 

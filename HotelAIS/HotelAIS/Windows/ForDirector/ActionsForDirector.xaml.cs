@@ -1,6 +1,10 @@
+
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using Geared.Wpf.Scrollable;
+using Wpf.CartesianChart.Basic_Bars;
+
 
 namespace HotelAIS.Windows.ForDirector
 {
@@ -9,24 +13,29 @@ namespace HotelAIS.Windows.ForDirector
         public ActionsForDirector()
         {
             InitializeComponent();
+            
         }
 
 
         private void StatisticMoneyBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            // UserControl statisticMoney = new StatisticMoney();
-            // statisticMoney.IsEnabled = false;
-
+        { 
+            Window statisticMoney = new StatisticMoney();
+            statisticMoney.Owner = this;
+            statisticMoney.Show();
         }
 
         private void StatisticGuestsBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Window statisticGuests = new StatisticGuests();
+            statisticGuests.Owner = this;
+            statisticGuests.Show();
         }
 
         private void StatisticFreeRoomBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Window statisticFreeRooms = new StatisticFreeRooms();
+            statisticFreeRooms.Owner = this;
+            statisticFreeRooms.Show();
         }
     }
 }

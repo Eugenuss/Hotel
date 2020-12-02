@@ -74,7 +74,6 @@
     <Compile Include="Guests.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="ScrollableVm.cs" />
     <Compile Include="Windows\ForAdmin\AddRoomWindow.xaml.cs">
       <DependentUpon>AddRoomWindow.xaml</DependentUpon>
     </Compile>
@@ -95,6 +94,12 @@
     </Compile>
     <Compile Include="Windows\ForDirector\ActionsForDirector.xaml.cs">
       <DependentUpon>ActionsForDirector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForDirector\StatisticFreeRooms.xaml.cs">
+      <DependentUpon>StatisticFreeRooms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForDirector\StatisticGuests.xaml.cs">
+      <DependentUpon>StatisticGuests.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ForDirector\StatisticMoney.xaml.cs">
       <DependentUpon>StatisticMoney.xaml</DependentUpon>
@@ -175,6 +180,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ForDirector\ActionsForDirector.xaml" />
+    <Page Include="Windows\ForDirector\StatisticFreeRooms.xaml" />
+    <Page Include="Windows\ForDirector\StatisticGuests.xaml" />
     <Page Include="Windows\ForDirector\StatisticMoney.xaml" />
     <Page Include="Windows\ForMaid\ActionsForMaid.xaml" />
     <Page Include="Windows\ForMaid\NeedCleanRooms.xaml" />
