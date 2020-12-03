@@ -37,9 +37,9 @@ namespace HotelAIS.Windows
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            newRoom.cost = Convert.ToInt32(CostTextBox.Text);
-            newRoom.id = Convert.ToInt32(RoomNumTextBox.Text);
-            newRoom.personCount = Convert.ToInt32(RoomPersonNumTextBox.Text);
+            newRoom.Cost = Convert.ToInt32(CostTextBox.Text);
+            newRoom.ID = Convert.ToInt32(RoomNumTextBox.Text);
+            newRoom.Person = Convert.ToInt32(RoomPersonNumTextBox.Text);
             ownerWin.UpdateTable();
             this.Close();
         }

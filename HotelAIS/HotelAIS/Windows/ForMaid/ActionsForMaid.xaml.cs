@@ -19,7 +19,7 @@ namespace HotelAIS.Windows.ForMaid
         {
             try
             {
-                string sql = "UPDATE `rooms` Set `CleanStatus`=0 WHERE ID="+Convert.ToInt32(NumberField.Text);
+                string sql = "UPDATE `rooms` Set `CleanStatus`=1 WHERE ID="+Convert.ToInt32(NumberField.Text);
                 string connString = "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
                 MySqlConnection conn = new MySqlConnection(connString);
                 conn.Open();
@@ -40,7 +40,7 @@ namespace HotelAIS.Windows.ForMaid
         {
             try
             {
-                string sql = "UPDATE `rooms` Set `CleanStatus`=1 WHERE ID="+Convert.ToInt32(NumberField.Text);
+                string sql = "UPDATE `rooms` Set `CleanStatus`=0 WHERE ID="+Convert.ToInt32(NumberField.Text);
                 string connString = "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
                 MySqlConnection conn = new MySqlConnection(connString);
                 conn.Open();
@@ -67,7 +67,7 @@ namespace HotelAIS.Windows.ForMaid
 
         private void ReturnButton_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Application.Current.Shutdown();
         }
 
         

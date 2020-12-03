@@ -4,29 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
-        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
-        xmlns:hotelAis="clr-namespace:HotelAIS"
         mc:Ignorable="d"
         Title="NeedCleanRooms" Height="450" Width="800">
     <Grid Background="Lavender">
         <StackPanel>
-            <ListView Name="phonesList" ItemsSource="{DynamicResource ResourceKey=phones}" >
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">Модель</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Width="100">Компания</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Цена</GridViewColumn>
-                    </GridView>
-                </ListView.View>
-                <ListView.Resources>
-                    <col:ArrayList x:Key="phones">
-                        <hotelAis:Phone Title="iPhone 6S" Company="Apple" Price="54990" />
-                        <hotelAis:Phone Title="Lumia 950" Company="Microsoft" Price="39990" />
-                        <hotelAis:Phone Title="Nexus 5X" Company="Google" Price="29990" />
-                        <hotelAis:Phone Title = "Galaxy Edge" Company = "Samsung" Price = "45670" />
-                    </col:ArrayList>
-                </ListView.Resources>
-            </ListView>
+            <DataGrid x:Name="RoomsData" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" IsReadOnly="True"/>
             <Button x:Name="ReturnButton" Content="Назад" Click="ReturnButton_OnClick" Margin="318,10" />
         </StackPanel>
     </Grid>
