@@ -13,7 +13,7 @@
                 <lvc:Axis Title="Дни" Labels="{Binding Labels}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Доход в рублях" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+                <lvc:Axis Title="Свободных комнат" LabelFormatter="{Binding Formatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart> 
     </Grid>

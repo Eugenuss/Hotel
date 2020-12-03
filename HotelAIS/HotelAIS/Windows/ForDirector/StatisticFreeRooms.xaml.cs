@@ -7,38 +7,37 @@ using LiveCharts.Wpf;
 
 namespace Wpf.CartesianChart.Basic_Bars
 {
-    public partial class StatisticFreeRooms : Window/*UserControl*/
+    public partial class StatisticFreeRooms : Window /*UserControl*/
     {
-        static DateTime dateFrom = Convert.ToDateTime("02.12.2020");
-        static DateTime dateTo = Convert.ToDateTime("01.01.2021");
-        double daysBetween = (dateTo - dateFrom).TotalDays;
-
-        public StatisticFreeRooms()
+        public StatisticFreeRooms(DateTime dateFrom, DateTime dateTo)
         {
             InitializeComponent();
 
             // Not so genius code that generate money for the day
+            double daysBetween = (dateTo - dateFrom).TotalDays;
             List<double> randomMoney = new List<double>();
             Random rand = new Random();
             for (int i = 0; i <= daysBetween; i++)
             {
-                randomMoney.Add(15000 * rand.Next(0, 33));
+                randomMoney.Add(rand.Next(0, 33));
             }
+
             // Not so genius code of translate List<double> to CharValues
             ChartValues<double> values = new ChartValues<double>();
             for (int i = 0; i < randomMoney.Count; i++)
             {
                 values.Add(randomMoney[i]);
             }
-            
+
             SeriesCollection = new SeriesCollection
             {
                 new ColumnSeries
                 {
-                    Title = "Доход с комнат.",
+                    Title = "Кол-во свободных комнат.",
                     Values = values
                 }
             };
+
 
             // adding series will update and animate the chart automatically
             // SeriesCollection.Add(new ColumnSeries
@@ -56,6 +55,7 @@ namespace Wpf.CartesianChart.Basic_Bars
             {
                 dateBetween.Add(dateFrom.AddDays(i).ToString().Remove(10));
             }
+
             Labels = dateBetween.ToArray();
 
 
