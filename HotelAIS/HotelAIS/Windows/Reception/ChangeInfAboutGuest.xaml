@@ -7,33 +7,35 @@
         mc:Ignorable="d"
         Title="ChangeInfAboutGuest" Height="450" Width="800">
     <Grid>
-        <StackPanel>
+        <StackPanel HorizontalAlignment="Center">
             <Grid>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Grid.Row="0" x:Name="FName" Width ="0" Height="20"  Text="Имя" Margin="0,10, 0, 0"/>
-                <Line Grid.Row="1" Height="10"/>
-                <TextBox Grid.Row="2" x:Name="SName" Width ="200" Height="20" Text="Фамилия" Margin="0,10, 0, 0"/>
-                <TextBox Grid.Row="3" x:Name="TName" Width ="200" Height="20" Text="Отчество" Margin="0,10, 0, 0"/>
-                <TextBox Grid.Row="4" x:Name="Series" Width ="200" Height="20" Text="Серия паспорта" Margin="0,10, 0, 0"/>
-                <TextBox Grid.Row="5" x:Name="Number" Width ="200" Height="20" Text="Номер паспорта" Margin="0,10, 0, 0"/>
-                <TextBox Grid.Row="6" x:Name="ArrivalDate" Width ="200" Height="20" Text="Дата прибытия" Margin="0,10, 0, 0"/>
-                <TextBox Grid.Row="7" x:Name="OutDate" Width ="200" Height="20" Text="Дата отбытия" Margin="0,10, 0, 0"/>
-                <Button Grid.Row="8" x:Name="AddGuestInTable" Width="200" Content="Изменить информацию" 
-                        Click="ChangeGuest_Click" Margin="0,10,0,0"/>
-                <Button Grid.Row="9" x:Name="ReturnBut" Width="200" Content="Назад" 
-                        Click="ReturnBut_Click" Margin="0,10,0,0"/>
-            </Grid>
+                <TextBox Grid.Row="0" x:Name="FName" Height="20" Text="Имя" />
+                <TextBox Grid.Row="1" x:Name="SName"  Height="20" Text="Фамилия" />
+                <TextBox Grid.Row="2" x:Name="TName"  Height="20" Text="Отчество" />
+                <TextBox Grid.Row="3" x:Name="Series"  Height="20" Text="Серия паспорта" />
+                <TextBox Grid.Row="4" x:Name="Number"  Height="20" Text="Номер паспорта" />
+                <TextBox Grid.Row="5" x:Name="id"  Height="20" Text="Id гостя" />
+                <!--<TextBox Grid.Row="5" x:Name="ArrivalDate" Width ="200" Height="20" Text="Дата прибытия" Margin="0,10, 0, 0"/>-->
+                <!--<TextBox Grid.Row="6" x:Name="OutDate" Width ="200" Height="20" Text="Дата отбытия" Margin="0,10, 0, 0"/>-->
+                <Button Grid.Row="6" x:Name="AddGuestInTable" Width="200" Content="Изменить информацию" 
+                        Click="ChangeInf_Click" />
+                <Button Grid.Row="7" x:Name="ReturnBut" Width="200" Content="Назад" 
+                        Click="ReturnBut_Click" />
+            </Grid> 
         </StackPanel>
     </Grid>
 </Window>

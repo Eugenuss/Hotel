@@ -10,8 +10,9 @@
         <StackPanel>
             <ScrollViewer Height="348">
                 <StackPanel VerticalAlignment="Top">
-                    <DataGrid x:Name="ChangeInfData" HeadersVisibility="All">
-                    </DataGrid>
+                    <DataGrid x:Name="ChangeInfData" HeadersVisibility="All" MouseDoubleClick="DoubleClick_Click" 
+                              IsReadOnly="True">
+                    </DataGrid >
                 </StackPanel>
             </ScrollViewer>
             <Line Height="20"/>
