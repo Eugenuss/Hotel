@@ -2,16 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Effects;
-using HotelAIS.Windows.ForDirector;
 using LiveCharts;
 using LiveCharts.Wpf;
 
 namespace Wpf.CartesianChart.Basic_Bars
 {
-    public partial class StatisticMoney : Window
+    public partial class StatisticFreeRooms : Window /*UserControl*/
     {
-        public StatisticMoney(DateTime dateFrom, DateTime dateTo)
+        public StatisticFreeRooms(DateTime dateFrom, DateTime dateTo)
         {
             InitializeComponent();
 
@@ -21,7 +19,7 @@ namespace Wpf.CartesianChart.Basic_Bars
             Random rand = new Random();
             for (int i = 0; i <= daysBetween; i++)
             {
-                randomMoney.Add(15000 * rand.Next(0, 33));
+                randomMoney.Add(rand.Next(0, 33));
             }
 
             // Not so genius code of translate List<double> to CharValues
@@ -35,7 +33,7 @@ namespace Wpf.CartesianChart.Basic_Bars
             {
                 new ColumnSeries
                 {
-                    Title = "Доход с комнат.",
+                    Title = "Кол-во свободных комнат.",
                     Values = values
                 }
             };

@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
         mc:Ignorable="d"
         Title="NeedCleanRooms" Height="450" Width="800">
-    <Grid>
+    <Grid Background="Lavender">
         <StackPanel>
-            <DataGrid/>
+            <DataGrid x:Name="RoomsData" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" IsReadOnly="True"/>
             <Button x:Name="ReturnButton" Content="Назад" Click="ReturnButton_OnClick" Margin="318,10" />
         </StackPanel>
     </Grid>

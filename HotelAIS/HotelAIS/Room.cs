@@ -8,22 +8,24 @@ namespace HotelAIS
 {
     public class Room
     {
-        public Room(int id)
+        public Room(int ID, int Number, int Person, int BusyStatus, int CleanStatus, int BookingStatus, int Cost)
         {
-            this.id = id;
-
-            this.personCount = 1;
-            this.cost = 0;
-            busyStatus = "свободна";
-            cleanStatus = "прибрана";
-            bookingStatus = "незабронирована";
+            this.ID = ID;
+            this.Number = Number;
+            this.Person = Person;
+            this.BusyStatus = BusyStatus;
+            this.CleanStatus = CleanStatus;
+            this.BookingStatus = BookingStatus;
+            this.Cost = Cost;
         }
 
-        public int id { get; set; }
-        public string busyStatus { get; set; }
-        public int personCount { get; set; }
-        public string cleanStatus { get; set; }
-        public string bookingStatus { get; set; }
-        public int cost { get; set; }
+        public int ID { get; set; }
+        
+        public int Number { get; set; }
+        public int BusyStatus { get; set; }
+        public int Person { get; set; }
+        public int CleanStatus { get; set; }
+        public int BookingStatus { get; set; }
+        public int Cost { get; set; }
     }
 }

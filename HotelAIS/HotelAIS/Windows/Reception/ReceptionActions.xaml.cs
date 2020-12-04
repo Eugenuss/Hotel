@@ -11,28 +11,36 @@ namespace HotelAIS.Windows.Reception
 
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Owner.Show();
             this.Close();
         }
         
         private void FreeRoomsBut_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window menuFreeRoom = new MenuFreeRoom();
+            menuFreeRoom.Owner = this;
+            menuFreeRoom.Show();
         }
         
         private void ChangeRoomStatBut_Click(object sender, RoutedEventArgs e)
         {
             
+            Window changeInfAboutRoom = new ChangeInfAboutRoom();
+            changeInfAboutRoom.Owner = this;
+            changeInfAboutRoom.Show();
         }
         
         private void AddGuestBut_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window addGuest = new AddGuest();
+            addGuest.Owner = this;
+            addGuest.Show();
         }
 
         private void ChangeGuestBut_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window changeInfAboutGuest = new ChangeInfAboutGuest();
+            changeInfAboutGuest.Owner = this;
+            changeInfAboutGuest.Show();
         }
         
         

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using HotelAIS.Windows.ForDirector;
+using HotelAIS.Windows.ForMaid;
+using HotelAIS.Windows.Reception;
+using MySql.Data.MySqlClient;
+
 
 namespace HotelAIS.Windows
 {
@@ -26,14 +21,65 @@ namespace HotelAIS.Windows
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckAuth())
+            string sql = "select * from users where Login=\""+UserPassword.Text+"\" and Password=\""+UserPassword.Text+"\"";
+            string connString = "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
+            MySqlConnection connect = new MySqlConnection(connString);
+            connect.Open();
+            MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect);
+            DataTable table = new DataTable();
+            sda.Fill(table);
+            connect.Close();
+            
+            
+            
+            if (table.Rows.Count == 1)
             {
-                Window adminMainWindow = new AdminMainWindow();
-                adminMainWindow.Owner = this;
-                this.Hide();
-                adminMainWindow.Show();
+                MessageBox.Show("Вход выполнен успешно! ");
+                switch (table.Rows[0].ItemArray.GetValue(3).ToString())
+                {
+                    case "Admin":
+                        Window adminMainWindow = new AdminMainWindow();
+                        adminMainWindow.Owner = this;
+                        this.Hide();
+                        adminMainWindow.Show();
+                        break;
+                    case "Director":
+                        Window actionsForDirector = new ActionsForDirector();
+                        actionsForDirector.Owner = this;
+                        this.Hide();
+                        actionsForDirector.Show();
+                        break;
+                    case "Reception":
+                        Window receptionActions = new ReceptionActions();
+                        receptionActions.Owner = this;
+                        this.Hide();
+                        receptionActions.Show();
+                        break;
+                    case "Maid":
+                        Window actionsForMaid = new ActionsForMaid();
+                        actionsForMaid.Owner = this;
+                        this.Hide();
+                        actionsForMaid.Show();
+                        break;
+                }
             }
+            
+
+            
         }
+
+
+        // Метод Eugene
+        // private void LoginButton_Click(object sender, RoutedEventArgs e)
+        // {
+        //     if (CheckAuth())
+        //     {
+        //         Window adminMainWindow = new AdminMainWindow();
+        //         adminMainWindow.Owner = this;
+        //         this.Hide();
+        //         adminMainWindow.Show();
+        //     }
+        // }
 
         public bool CheckAuth()
         {

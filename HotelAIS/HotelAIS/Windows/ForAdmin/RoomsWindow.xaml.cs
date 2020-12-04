@@ -34,7 +34,7 @@ namespace HotelAIS.Windows
         private void AddRoomButton_Click(object sender, RoutedEventArgs e)
         {
             int newRoomId = XApp.rooms.Count;
-            Room newRoom = new Room(newRoomId);
+            Room newRoom = new Room(0,1,1,1,1,1,1);
             XApp.rooms.Add(newRoom);
 
             Window addRoomWindow = new AddRoomWindow(newRoom, this);

@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
         mc:Ignorable="d"
-        Title="ActionsForMaid" Height="450" Width="800">
+        Title="ActionsForMaid2" Height="450" Width="800">
     <Grid>
         <StackPanel>
             <TextBlock Text="Меню действий для горничной" FontSize="18" HorizontalAlignment="Center" />
@@ -13,7 +13,7 @@
 
             <TextBlock Text="Введите номер комнаты" FontSize="16" HorizontalAlignment="Center" />
 
-            <TextBox x:Name="NumberField" MaxLength="3" TextChanged="TextBoxBase_OnTextChanged" Margin="276,10"> Номер комнаты </TextBox>
+            <TextBox x:Name="NumberField" MaxLength="3"  Margin="276,10"> Номер комнаты </TextBox>
 
             <Button x:Name="CleanBtn" Content="Убрана" Click="CleanBtn_OnClick" Margin="276,10" />
 
