@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.ComponentModel;
+using System.Data;
 using System.Runtime.Remoting.Channels;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +14,30 @@ namespace HotelAIS.Windows.Reception
         public ChangeInfAboutRoom()
         {
             InitializeComponent();
+            UpdateTable();
+        }
+
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Owner.Show();
+            this.Close();
+        }
+
+        private void ChangeInfAbout_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRoom = (DataRowView)ChangeInfData.SelectedItem;
+            String valueOfItem = selectedRoom["ID"].ToString();
+            int index = Convert.ToInt32(valueOfItem);
+            
+            Window changeInfWindow = new ChangeInfWindow(index);
+            changeInfWindow.Owner = this;
+            changeInfWindow.Show();
+            this.Hide();
+
+        }
+
+        public void UpdateTable()
+        {
             string sql = "select * from rooms;";
             string connString =
                 "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
@@ -22,19 +48,12 @@ namespace HotelAIS.Windows.Reception
             sda.Fill(table);
             connect.Close();
             ChangeInfData.ItemsSource = table.DefaultView;
-            
-        }
-        
-        private void ReturnButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Owner.Show();
-            this.Close();
         }
 
-        private void DoubleClick_Click(object sender, MouseButtonEventArgs e)
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            //TO DO
-            //Get selected item and change them
+            UpdateTable();
         }
+        
     }
 }

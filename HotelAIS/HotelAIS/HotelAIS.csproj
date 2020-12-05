@@ -184,6 +184,9 @@
     <Compile Include="Windows\Reception\ChangeInfAboutRoom.xaml.cs">
       <DependentUpon>ChangeInfAboutRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Reception\ChangeInfWindow.xaml.cs">
+      <DependentUpon>ChangeInfWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Reception\MenuFreeRoom.xaml.cs">
       <DependentUpon>MenuFreeRoom.xaml</DependentUpon>
     </Compile>
@@ -253,6 +256,7 @@
     <Page Include="Windows\Reception\AddGuest.xaml" />
     <Page Include="Windows\Reception\ChangeInfAboutGuest.xaml" />
     <Page Include="Windows\Reception\ChangeInfAboutRoom.xaml" />
+    <Page Include="Windows\Reception\ChangeInfWindow.xaml" />
     <Page Include="Windows\Reception\MenuFreeRoom.xaml" />
     <Page Include="Windows\Reception\ReceptionActions.xaml" />
   </ItemGroup>
