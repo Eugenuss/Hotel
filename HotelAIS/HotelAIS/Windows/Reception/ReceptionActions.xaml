@@ -15,7 +15,6 @@
             <Line Height="10"/>
             <Button x:Name="ChangeRoomStatBut" Content="Изменить статус комнаты" 
                     Click="ChangeRoomStatBut_Click" Margin="276,0"/>
-            <TextBox x:Name="UserName" Text="Номер комнаты" Margin="540,-18,140,0"/>
             <Line Height="10"/>
             <Button x:Name="AddGuestBut" Content="Добавить гостя" 
                     Click="AddGuestBut_Click" Margin="276,0"/>
