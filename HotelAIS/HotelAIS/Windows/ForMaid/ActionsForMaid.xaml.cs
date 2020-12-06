@@ -19,19 +19,23 @@ namespace HotelAIS.Windows.ForMaid
         {
             try
             {
-                string sql = "UPDATE `rooms` Set `CleanStatus`=1 WHERE ID="+Convert.ToInt32(NumberField.Text);
-                string connString = "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
-                MySqlConnection conn = new MySqlConnection(connString);
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Комната "+NumberField.Text+" отмечена как убранная!");
+                if (NumberField.Text != "" || NumberField.Text != "Номер комнаты")
+                {
+                    string sql = "UPDATE `rooms` Set `CleanStatus`=1 WHERE ID="+Convert.ToInt32(NumberField.Text);
+                    string connString = "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
+                    MySqlConnection conn = new MySqlConnection(connString);
+                    conn.Open();
+                    MySqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Комната "+NumberField.Text+" отмечена как убранная!");    
+                }
+                
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.ToString());
+                MessageBox.Show("|"+NumberField.Text+"|");
                 throw;
             }
         }
