@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using LiveCharts;
 using LiveCharts.Wpf;
+using MySql.Data.MySqlClient;
 
 namespace Wpf.CartesianChart.Basic_Bars
 {
@@ -13,21 +15,50 @@ namespace Wpf.CartesianChart.Basic_Bars
         {
             InitializeComponent();
 
-            // Not so genius code that generate money for the day
+            // // Not so genius code that generate money for the day
+            // double daysBetween = (dateTo - dateFrom).TotalDays; 
+            // List<double> randomMoney = new List<double>();
+            // Random rand = new Random();
+            // for (int i = 0; i <= daysBetween; i++)
+            // {
+            //     randomMoney.Add(rand.Next(0, 33));
+            // }
+            // // Not so genius code of translate List<double> to CharValues
+            // ChartValues<double> values = new ChartValues<double>();
+            // for (int i = 0; i < randomMoney.Count; i++)
+            // {
+            //     values.Add(randomMoney[i]);
+            // }
+            string connString =
+                "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
+            MySqlConnection connect = new MySqlConnection(connString);
+            connect.Open();
+            int idFrom, idTo;
             double daysBetween = (dateTo - dateFrom).TotalDays;
-            List<double> randomMoney = new List<double>();
-            Random rand = new Random();
-            for (int i = 0; i <= daysBetween; i++)
+            int[] freeRoomsCount = new int[(int) daysBetween];
+            for (int i = 0; i < daysBetween; i++)
             {
-                randomMoney.Add(rand.Next(0, 33));
+                freeRoomsCount[i] = 0;
             }
 
-            // Not so genius code of translate List<double> to CharValues
             ChartValues<double> values = new ChartValues<double>();
-            for (int i = 0; i < randomMoney.Count; i++)
+            int tries = 0;
+            for (int i = 0; i < daysBetween; i++)
             {
-                values.Add(randomMoney[i]);
+                DataTable table = new DataTable();
+                string sql = "select FreeRoomsTotal from hotelhistory where EnterDay=\'" +
+                             dateFrom.AddDays(i).ToShortDateString() + "\'";
+                MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect);
+                sda.Fill(table);
+                freeRoomsCount[i] += Convert.ToInt32(table.Rows[0].ItemArray.GetValue(0).ToString());
             }
+
+            for (int j = 0; j < freeRoomsCount.Length; j++)
+            {
+                values.Add(freeRoomsCount[j]);
+            }
+
+            connect.Close();
 
             SeriesCollection = new SeriesCollection
             {
