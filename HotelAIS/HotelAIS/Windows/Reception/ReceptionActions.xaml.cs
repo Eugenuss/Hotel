@@ -25,7 +25,7 @@ namespace HotelAIS.Windows.Reception
         {
             
             Window changeInfAboutRoom = new ChangeInfAboutRoom();
-            changeInfAboutRoom.Owner = this;
+            //changeInfAboutRoom.Owner = this;
             changeInfAboutRoom.Show();
         }
         

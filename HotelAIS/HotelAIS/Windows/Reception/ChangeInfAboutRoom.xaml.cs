@@ -19,7 +19,7 @@ namespace HotelAIS.Windows.Reception
 
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Owner.Show();
+            //this.Owner.Show();
             this.Close();
         }
 
