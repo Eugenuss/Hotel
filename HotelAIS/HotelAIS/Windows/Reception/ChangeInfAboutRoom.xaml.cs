@@ -32,16 +32,14 @@ namespace HotelAIS.Windows.Reception
                 String valueOfItem = selectedRoom["ID"].ToString();
                 index = Convert.ToInt32(valueOfItem);
                 Window changeInfWindow = new ChangeInfWindow(index);
-                changeInfWindow.Owner = this;
+                //changeInfWindow.Owner = this;
                 changeInfWindow.Show();
-                this.Hide();
 
             }
             catch (NullReferenceException)
             {
                 MessageBox.Show("Вы не выбрали комнату!", "Уведомление", MessageBoxButton.OK);
             }
-            
 
         }
 

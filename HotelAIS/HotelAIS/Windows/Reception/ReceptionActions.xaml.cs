@@ -42,8 +42,5 @@ namespace HotelAIS.Windows.Reception
             changeInfAboutGuest.Owner = this;
             changeInfAboutGuest.Show();
         }
-        
-        
-        
     }
 }

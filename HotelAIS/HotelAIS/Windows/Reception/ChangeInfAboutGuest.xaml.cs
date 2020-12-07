@@ -9,6 +9,7 @@ namespace HotelAIS.Windows.Reception
         public ChangeInfAboutGuest()
         {
             InitializeComponent();
+            
         }
         
         private void ReturnBut_Click(object sender, RoutedEventArgs e)
