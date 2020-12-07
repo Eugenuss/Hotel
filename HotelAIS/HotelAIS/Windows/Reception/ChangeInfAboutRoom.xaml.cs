@@ -25,14 +25,23 @@ namespace HotelAIS.Windows.Reception
 
         private void ChangeInfAbout_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView selectedRoom = (DataRowView)ChangeInfData.SelectedItem;
-            String valueOfItem = selectedRoom["ID"].ToString();
-            int index = Convert.ToInt32(valueOfItem);
+            int index = 0; //Костыль
+            try
+            {
+                DataRowView selectedRoom = (DataRowView)ChangeInfData.SelectedItem;
+                String valueOfItem = selectedRoom["ID"].ToString();
+                index = Convert.ToInt32(valueOfItem);
+                Window changeInfWindow = new ChangeInfWindow(index);
+                changeInfWindow.Owner = this;
+                changeInfWindow.Show();
+                this.Hide();
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Вы не выбрали комнату!", "Уведомление", MessageBoxButton.OK);
+            }
             
-            Window changeInfWindow = new ChangeInfWindow(index);
-            changeInfWindow.Owner = this;
-            changeInfWindow.Show();
-            this.Hide();
 
         }
 

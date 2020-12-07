@@ -184,9 +184,7 @@
     <Compile Include="Windows\Reception\ChangeInfAboutRoom.xaml.cs">
       <DependentUpon>ChangeInfAboutRoom.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Reception\ChangeInfWindow.xaml.cs">
-      <DependentUpon>ChangeInfWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Windows\Reception\ChangeInfWindow.xaml.cs" />
     <Compile Include="Windows\Reception\MenuFreeRoom.xaml.cs">
       <DependentUpon>MenuFreeRoom.xaml</DependentUpon>
     </Compile>
