@@ -2,7 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:HotelAIS"
+<<<<<<< Updated upstream
              StartupUri="Windows/LoginWindow.xaml">
+=======
+             StartupUri="Windows/LoginWindow.xaml"> <!--Windows/LoginWindow.xaml-->
+>>>>>>> Stashed changes
     <!-- 
     
 Windows/LoginWindow.xaml
