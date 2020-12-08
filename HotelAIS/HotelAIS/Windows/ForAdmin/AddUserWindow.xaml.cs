@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,6 @@ namespace HotelAIS.Windows
             this.newUser = newUser;
             this.ownerWin = ownerWin;
             InitializeComponent();
-            UserIDTextBox.Text = newUser.id.ToString();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -38,11 +38,16 @@ namespace HotelAIS.Windows
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            newUser.id = Convert.ToInt32(UserIDTextBox.Text);
-            newUser.login = UserLoginTextBox.Text;
-            newUser.password = UserPassTextBox.Text;
-            newUser.role = RoleTextBox.Text;
-
+            newUser.Login = UserLoginTextBox.Text;
+            newUser.Password = UserPassTextBox.Text;
+            newUser.Role = RoleTextBox.Text;
+            string sqlRequest = $"INSERT INTO `users` (`ID`, `Login`, `Password`, `Role`)" +
+                $" VALUES (NULL, '{newUser.Login}', '{newUser.Password}', '{newUser.Role}');";
+            XApp.openDBConnection();
+            MySqlCommand cmd = XApp.connection.CreateCommand();
+            cmd.CommandText = sqlRequest;
+            cmd.ExecuteNonQuery();
+            XApp.closeDBConnection();
             ownerWin.UpdateTable();
             this.Close();
         }

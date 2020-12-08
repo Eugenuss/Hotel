@@ -12,20 +12,20 @@
                 <StackPanel VerticalAlignment="Top">
                     <DataGrid x:Name="RoomsData" HeadersVisibility="All" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding id}" Header="Номер"/>
-                            <DataGridTextColumn Binding="{Binding personCount}" Header="Кол-во мест"/>
-                            <DataGridTextColumn Binding="{Binding busyStatus}" Header="Статус занятости"/>
-                            <DataGridTextColumn Binding="{Binding cleanStatus}" Header="Статус уборки"/>
-                            <DataGridTextColumn Binding="{Binding bookingStatus}" Header="Статус брони"/>
-                            <DataGridTextColumn Binding="{Binding cost}" Header="Стоимость"/>
+                            <DataGridTextColumn Binding="{Binding Number}" Header="Номер"/>
+                            <DataGridTextColumn Binding="{Binding Person}" Header="Кол-во мест"/>
+                            <DataGridTextColumn Binding="{Binding BusyStatus}" Header="Статус занятости"/>
+                            <DataGridTextColumn Binding="{Binding CleanStatus}" Header="Статус уборки"/>
+                            <DataGridTextColumn Binding="{Binding BookingStatus}" Header="Статус брони"/>
+                            <DataGridTextColumn Binding="{Binding Cost}" Header="Стоимость"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
             </ScrollViewer>
             <Line Height="20"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="AddRoomButton" Content="Добавить комнату" Width="108" Margin="10, 0, 10, 0" Click="AddRoomButton_Click"/>
-                <Button x:Name="DelRoomButton" Content="Удалить комнату" Width="108" Margin="10, 0, 10, 0" Click="DelRoomButton_Click"/>
+                <Button x:Name="AddRoomButton" Content="Добавить комнату" Width="110" Margin="10, 0, 10, 0" Click="AddRoomButton_Click"/>
+                <Button x:Name="DelRoomButton" Content="Удалить комнату" Width="111" Margin="10, 0, 10, 0" Click="DelRoomButton_Click"/>
                 <Button x:Name="ReturnButton" Content="Назад" Width="64" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
             </StackPanel>
         </StackPanel>

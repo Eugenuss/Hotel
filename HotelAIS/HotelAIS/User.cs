@@ -8,17 +8,17 @@ namespace HotelAIS
 {
     public class User
     {
-        public User(int id, string login, string password, string role)
+        public User(int ID, string Login, string Password, string Role)
         {
-            this.id = id;
-            this.login = login;
-            this.password = password;
-            this.role = role;
+            this.ID = ID;
+            this.Login = Login;
+            this.Password = Password;
+            this.Role = Role;
         }
 
-        public int id { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public string role { get; set; }
+        public int ID { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
     }
 }

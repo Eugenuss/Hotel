@@ -17,11 +17,12 @@ namespace HotelAIS.Windows
         public LoginWindow()
         {
             InitializeComponent();
+            UserPassword.Visibility = Visibility.Visible;
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            string sql = "select * from users where Login=\""+UserPassword.Text+"\" and Password=\""+UserPassword.Text+"\"";
+            string sql = $"select * from users where Login='{UserName.Text}' and Password='{UserPassword.Password}'";
             string connString = "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
             MySqlConnection connect = new MySqlConnection(connString);
             connect.Open();
@@ -29,9 +30,9 @@ namespace HotelAIS.Windows
             DataTable table = new DataTable();
             sda.Fill(table);
             connect.Close();
-            
-            
-            
+
+
+
             if (table.Rows.Count == 1)
             {
                 MessageBox.Show("Вход выполнен успешно! ");
@@ -63,39 +64,42 @@ namespace HotelAIS.Windows
                         break;
                 }
             }
-            
 
-            
+
+
         }
 
-
-        // Метод Eugene
-        // private void LoginButton_Click(object sender, RoutedEventArgs e)
-        // {
-        //     if (CheckAuth())
-        //     {
-        //         Window adminMainWindow = new AdminMainWindow();
-        //         adminMainWindow.Owner = this;
-        //         this.Hide();
-        //         adminMainWindow.Show();
-        //     }
-        // }
-
-        public bool CheckAuth()
+        private void UserName_GotFocus(object sender, RoutedEventArgs e)
         {
-            foreach (User u in XApp.users)
+            if (UserName.Text == "Имя пользователя")
             {
-                if (u.login == UserName.Text)
-                {
-                    if (u.password == UserPassword.Text)
-                    {
-                        if (u.role == "admin")
-                            return true;
-                    }
-                }
+                UserName.Text = "";
             }
+        }
 
-            return false;
+        private void UserName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (UserName.Text == "")
+            {
+                UserName.Text = "Имя пользователя";
+            }
+        }
+
+        private void UserPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (UserPassword.Password == "Пароль")
+            {
+                UserPassword.Password = "";
+   
+            }
+        }
+
+        private void UserPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (UserPassword.Password == "")
+            {
+                UserPassword.Password = "Пароль";
+            }
         }
     }
 }

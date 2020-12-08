@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:HotelAIS"
-             StartupUri="Windows/Reception/ReceptionActions.xaml">
+             StartupUri="Windows/LoginWindow.xaml">
     <!-- 
     
 Windows/LoginWindow.xaml

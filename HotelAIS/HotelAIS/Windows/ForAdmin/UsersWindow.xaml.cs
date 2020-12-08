@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,9 +35,7 @@ namespace HotelAIS.Windows
 
         private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
-            int newRoomId = XApp.users.Count;
-            User newUser = new User(XApp.users.Count, "", "", "");
-            XApp.users.Add(newUser);
+            User newUser = new User(0, "", "", "");
 
             Window addUserWindow = new AddUserWindow(newUser, this);
             addUserWindow.Show();
@@ -44,13 +44,19 @@ namespace HotelAIS.Windows
         public void UpdateTable()
         {
             UsersData.ItemsSource = null;
-            UsersData.ItemsSource = XApp.users;
+            UsersData.ItemsSource = XApp.downloadUsers().DefaultView;
         }
 
         private void DelUserButton_Click(object sender, RoutedEventArgs e)
         {
-            User selectedUser = (User)UsersData.SelectedItem;
-            XApp.users.Remove(selectedUser);
+            DataRowView selectedUser = (DataRowView)UsersData.SelectedItem;
+            int id = Convert.ToInt32(selectedUser["ID"]);
+            string sqlRequest = $"DELETE FROM `users` WHERE `users`.`ID` = {id}";
+            XApp.openDBConnection();
+            MySqlCommand cmd = XApp.connection.CreateCommand();
+            cmd.CommandText = sqlRequest;
+            cmd.ExecuteNonQuery();
+            XApp.closeDBConnection();
             UpdateTable();
         }
     }

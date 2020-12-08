@@ -12,18 +12,18 @@
                 <StackPanel VerticalAlignment="Top">
                     <DataGrid x:Name="UsersData" HeadersVisibility="All" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding id}" Header="ID"/>
-                            <DataGridTextColumn Binding="{Binding login}" Header="Логин"/>
-                            <DataGridTextColumn Binding="{Binding password}" Header="Пароль"/>
-                            <DataGridTextColumn Binding="{Binding role}" Header="Роль"/>
+                            <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding Login}" Header="Логин"/>
+                            <DataGridTextColumn Binding="{Binding Password}" Header="Пароль"/>
+                            <DataGridTextColumn Binding="{Binding Role}" Header="Роль"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
             </ScrollViewer>
             <Line Height="20"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="AddUserButton" Content="Добавить пользователя" Width="108" Margin="10, 0, 10, 0" Click="AddUserButton_Click"/>
-                <Button x:Name="DelUserButton" Content="Удалить пользователя" Width="108" Margin="10, 0, 10, 0" Click="DelUserButton_Click"/>
+                <Button x:Name="AddUserButton" Content="Добавить пользователя" Width="139" Margin="10, 0, 10, 0" Click="AddUserButton_Click"/>
+                <Button x:Name="DelUserButton" Content="Удалить пользователя" Width="132" Margin="10, 0, 10, 0" Click="DelUserButton_Click"/>
                 <Button x:Name="ReturnButton" Content="Назад" Width="64" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
             </StackPanel>
         </StackPanel>
