@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows;
 using MySql.Data.MySqlClient;
 
@@ -9,7 +10,7 @@ namespace HotelAIS.Windows.Reception
         public ChangeInfAboutGuest()
         {
             InitializeComponent();
-            
+            UpdateTable();
         }
         
         private void ReturnBut_Click(object sender, RoutedEventArgs e)
@@ -20,28 +21,48 @@ namespace HotelAIS.Windows.Reception
 
         private void ChangeInf_Click(object sender, RoutedEventArgs e)
         {
-            try
+            DataRowView selectedRoom = (DataRowView)GuestsData.SelectedItem;
+            String valueOfItem = selectedRoom["ID"].ToString();
+            //GuestsData_OnCurrentCellChanged();
+        }
+
+        private void UpdateTable()
+        {
+            string sql = "select * from guests;";
+            MySqlConnect connect = new MySqlConnect();
+            connect.Open();
+            MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect.conn);
+            DataTable table = new DataTable();
+            sda.Fill(table);
+            connect.Close();
+            GuestsData.ItemsSource = table.DefaultView;
+        }
+
+        private void GuestsData_OnCurrentCellChanged(object sender, EventArgs e)
+        {
+            DataRowView selectedGuest = (DataRowView)GuestsData.SelectedItem;
+            if (selectedGuest != null)
             {
-                string fname = Convert.ToString(FName.Text);
-                string sname = Convert.ToString(SName.Text);
-                string mname = Convert.ToString(TName.Text);
-                int seria = Convert.ToInt32(Series.Text);
-                int number = Convert.ToInt32(Number.Text);
-                int id = Convert.ToInt32(this.id.Text);
-                string sql = $"UPDATE guests SET FirstName='{fname}', SecondName='{sname}', MiddleName='{mname}', " +
-                             $"Seria={seria}, Nomer={number} WHERE ID={id}";
+                int index = Convert.ToInt32(selectedGuest["ID"].ToString());
+                String Fname = selectedGuest["FirstName"].ToString();
+                String Sname = selectedGuest["SecondName"].ToString();
+                String Mname = selectedGuest["MiddleName"].ToString();
+                int Seria = Convert.ToInt32(selectedGuest["Seria"].ToString());
+                int Nomer = Convert.ToInt32(selectedGuest["Nomer"].ToString());
+            
+                string sql = $"update guests set FirstName='{Fname}', SecondName='{Sname}', MiddleName='{Mname}'," +
+                             $"Seria={Seria}, Nomer={Nomer} where ID={index};";
                 MySqlConnect connect = new MySqlConnect();
                 connect.Open();
                 MySqlCommand cmd = connect.conn.CreateCommand();
                 cmd.CommandText = sql;
                 cmd.ExecuteNonQuery();
                 connect.Close();
-                MessageBox.Show("Гость добавлен!", "Уведомление", MessageBoxButton.OK);
+                UpdateTable(); 
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
+            
+            
+            
         }
     }
 }

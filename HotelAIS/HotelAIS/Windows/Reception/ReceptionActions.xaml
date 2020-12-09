@@ -8,8 +8,7 @@
         Title="Меню для ресепшн" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Название" FontSize="18"/>
-            <Line Height="50"/>
+                <Line Height="50"/>
             <Button x:Name="FreeRoomsBut" Content="Показать свободные комнаты" 
                     Click="FreeRoomsBut_Click" Margin="276,0"/>
             <Line Height="10"/>

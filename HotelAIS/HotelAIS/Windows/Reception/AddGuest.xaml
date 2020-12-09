@@ -23,14 +23,18 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
-                <TextBox Grid.Row="0" x:Name="FName" Height="20" Text="Имя" />
-                <TextBox Grid.Row="1" x:Name="SName"  Height="20" Text="Фамилия" />
-                <TextBox Grid.Row="2" x:Name="TName"  Height="20" Text="Отчество" />
-                <TextBox Grid.Row="3" x:Name="Series"  Height="20" Text="Серия паспорта" />
-                <TextBox Grid.Row="4" x:Name="Number"  Height="20" Text="Номер паспорта" />
-                <!--<TextBox Grid.Row="5" x:Name="ArrivalDate" Width ="200" Height="20" Text="Дата прибытия" Margin="0,10, 0, 0"/>-->
-                <!--<TextBox Grid.Row="6" x:Name="OutDate" Width ="200" Height="20" Text="Дата отбытия" Margin="0,10, 0, 0"/>-->
-                <Button Grid.Row="7" x:Name="AddGuestInTable" Width="200" Content="Добавить гостя" 
+                <TextBox Grid.Row="0" x:Name="FName" Height="20" 
+                         Margin="0,10,0,0" Text="Имя" />
+                <TextBox Grid.Row="1" x:Name="SName"  Height="20" 
+                         Margin="0,10,0,0" Text="Фамилия" />
+                <TextBox Grid.Row="2" x:Name="TName"  Height="20" 
+                         Margin="0,10,0,0" Text="Отчество" />
+                <TextBox Grid.Row="3" x:Name="Series"  Height="20" 
+                         Margin="0,10,0,0" Text="Серия паспорта" />
+                <TextBox Grid.Row="4" x:Name="Number"  Height="20" 
+                         Margin="0,10,0,0" Text="Номер паспорта" />
+                <Button Grid.Row="7" x:Name="AddGuestInTable" Margin="0,10,0,0" 
+                        Width="200" Content="Добавить гостя" 
                         Click="AddGuest_Click" />
                 <Button Grid.Row="8" x:Name="ReturnBut" Width="200" Content="Назад" 
                         Click="ReturnBut_Click" />
