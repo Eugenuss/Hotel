@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
-        Title="ChangeInfAboutRoom" Height="450" Width="800">
+        Title="Изменить информацию о комнате" Height="450" Width="800">
     <Grid>
         <StackPanel>
             <ScrollViewer Height="348">

@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
-        Title="AddGuest" Height="450" Width="800">
+        Title="Добавить гостя" Height="450" Width="800">
     <StackPanel HorizontalAlignment="Center">
             <Grid>
                 <Grid.ColumnDefinitions >

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows" xmlns:local1="clr-namespace:HotelAIS"
         mc:Ignorable="d"
-        Title="RoomsWindow" Height="450" Width="800">
+        Title="Комнаты" Height="450" Width="800">
     <Grid>
         <StackPanel>
             <ScrollViewer Height="348">

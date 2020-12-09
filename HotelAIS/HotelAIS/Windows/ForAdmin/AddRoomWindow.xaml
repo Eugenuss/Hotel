@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="AddRoomWindow" Height="158.584" Width="270.03">
+        Title="Добавить информацию о комнате" Height="158.584" Width="270.03">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>

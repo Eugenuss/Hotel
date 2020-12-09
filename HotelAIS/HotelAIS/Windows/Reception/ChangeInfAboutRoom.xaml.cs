@@ -46,11 +46,9 @@ namespace HotelAIS.Windows.Reception
         public void UpdateTable()
         {
             string sql = "select * from rooms;";
-            string connString =
-                "Server=26.146.217.182;Port=3306;Database=hotel;Uid=DoomSlayer;pwd=lilboss;charset=utf8;";
-            MySqlConnection connect = new MySqlConnection(connString);
+            MySqlConnect connect = new MySqlConnect();
             connect.Open();
-            MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect);
+            MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect.conn);
             DataTable table = new DataTable();
             sda.Fill(table);
             connect.Close();
@@ -59,7 +57,15 @@ namespace HotelAIS.Windows.Reception
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            UpdateTable();
+            try
+            {
+                UpdateTable();
+                MessageBox.Show("Данные обновлены!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
         
     }

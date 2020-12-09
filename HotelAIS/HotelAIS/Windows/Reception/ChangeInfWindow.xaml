@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS"
         mc:Ignorable="d"
-        Title="ChangeInfWindow" Height="300" Width="600">
+        Title="Изменить статус комнаты" Height="300" Width="600">
     <Grid>
         <StackPanel VerticalAlignment="Top">
             <DataGrid x:Name="ChangeData" HeadersVisibility="All"

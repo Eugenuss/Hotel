@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
         mc:Ignorable="d"
-        Title="NeedCleanRooms" Height="450" Width="800">
+        Title="Комнаты требующие уборки" Height="450" Width="800">
     <Grid Background="Lavender">
         <StackPanel>
             <DataGrid x:Name="RoomsData" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" IsReadOnly="True"/>

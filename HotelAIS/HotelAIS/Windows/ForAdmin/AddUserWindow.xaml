@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="AddUserWindow" Height="159.828" Width="279.024">
+        Title="Добавить пользователя" Height="159.828" Width="279.024">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>

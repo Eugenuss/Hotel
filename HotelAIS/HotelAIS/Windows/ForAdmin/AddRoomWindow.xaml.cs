@@ -38,19 +38,26 @@ namespace HotelAIS.Windows
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            newRoom.Cost = Convert.ToInt32(CostTextBox.Text);
-            newRoom.Number = Convert.ToInt32(RoomNumTextBox.Text);
-            newRoom.Person = Convert.ToInt32(RoomPersonNumTextBox.Text);
-            string sqlRequest = $"INSERT INTO `rooms` (`ID`, `Number`, `Person`, `BusyStatus`, `CleanStatus`, " +
-                $"`BookingStatus`, `Cost`) VALUES (NULL, '{newRoom.Number}', '{newRoom.Person}'," +
-                $" '{newRoom.BusyStatus}', '{newRoom.CleanStatus}', '{newRoom.BookingStatus}', '{newRoom.Cost}');";
-            XApp.openDBConnection();
-            MySqlCommand cmd = XApp.connection.CreateCommand();
-            cmd.CommandText= sqlRequest;
-            cmd.ExecuteNonQuery();
-            XApp.closeDBConnection();
-            ownerWin.UpdateTable();
-            this.Close();
+            try
+            {
+                newRoom.Cost = Convert.ToInt32(CostTextBox.Text);
+                newRoom.Number = Convert.ToInt32(RoomNumTextBox.Text);
+                newRoom.Person = Convert.ToInt32(RoomPersonNumTextBox.Text);
+                string sqlRequest = $"INSERT INTO `rooms` (`ID`, `Number`, `Person`, `BusyStatus`, `CleanStatus`, " +
+                                    $"`BookingStatus`, `Cost`) VALUES (NULL, '{newRoom.Number}', '{newRoom.Person}'," +
+                                    $" '{newRoom.BusyStatus}', '{newRoom.CleanStatus}', '{newRoom.BookingStatus}', '{newRoom.Cost}');";
+                XApp.openDBConnection();
+                MySqlCommand cmd = XApp.connection.CreateCommand();
+                cmd.CommandText= sqlRequest;
+                cmd.ExecuteNonQuery();
+                XApp.closeDBConnection();
+                ownerWin.UpdateTable();
+                this.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

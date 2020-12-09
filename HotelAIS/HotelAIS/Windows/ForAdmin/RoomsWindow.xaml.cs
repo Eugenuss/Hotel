@@ -49,15 +49,22 @@ namespace HotelAIS.Windows
 
         private void DelRoomButton_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView selectedRoom = (DataRowView)RoomsData.SelectedItem;
-            int Number = Convert.ToInt32(selectedRoom["Number"]);
-            string sqlRequest = $"DELETE FROM `rooms` WHERE `rooms`.`Number` = {Number};";
-            XApp.openDBConnection();
-            MySqlCommand cmd = XApp.connection.CreateCommand();
-            cmd.CommandText = sqlRequest;
-            cmd.ExecuteNonQuery();
-            XApp.closeDBConnection();
-            UpdateTable();
+            try
+            {
+                DataRowView selectedRoom = (DataRowView)RoomsData.SelectedItem;
+                int Number = Convert.ToInt32(selectedRoom["Number"]);
+                string sqlRequest = $"DELETE FROM `rooms` WHERE `rooms`.`Number` = {Number};";
+                XApp.openDBConnection();
+                MySqlCommand cmd = XApp.connection.CreateCommand();
+                cmd.CommandText = sqlRequest;
+                cmd.ExecuteNonQuery();
+                XApp.closeDBConnection();
+                UpdateTable();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }
