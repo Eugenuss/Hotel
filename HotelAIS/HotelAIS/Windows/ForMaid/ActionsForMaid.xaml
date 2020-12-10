@@ -5,23 +5,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
         mc:Ignorable="d"
-        Title="Меню для горничной" Height="450" Width="800">
+        Title="Меню для горничной" Height="600" Width="800" WindowState="Maximized">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Меню действий для горничной" FontSize="18" HorizontalAlignment="Center" />
+            <TextBlock Text="Меню действий для горничной" FontSize="30" HorizontalAlignment="Center" />
             <Line Height="30" />
 
-            <TextBlock Text="Введите номер комнаты" FontSize="16" HorizontalAlignment="Center" />
+            <TextBlock Text="Введите номер комнаты" FontSize="28" HorizontalAlignment="Center" />
 
-            <TextBox x:Name="NumberField" MaxLength="3"  Margin="276,10"> Номер комнаты </TextBox>
+            <TextBox x:Name="NumberField" MaxLength="3" FontSize="28"  Margin="276,10"> Номер комнаты </TextBox>
 
-            <Button x:Name="CleanBtn" Content="Убрана" Click="CleanBtn_OnClick" Margin="276,10" />
+            <Button x:Name="CleanBtn" Content="Убрана" FontSize="28" Click="CleanBtn_OnClick" Margin="276,10" />
 
-            <Button x:Name="NeedCleanBtn" Content="Требуется уборка" Click="NeedCleanBtn_OnClick" Margin="276,10" />
+            <Button x:Name="NeedCleanBtn" Content="Требуется уборка" FontSize="28" Click="NeedCleanBtn_OnClick" Margin="276,10" />
 
-            <Button x:Name="ShowDirtRoom" Content="Показать комнаты в которых требуется уборка" Click="ShowDirtRoom_OnClick" Margin="250,70" />
+            <Button x:Name="ShowDirtRoom" Content="Показать комнаты в которых требуется уборка" FontSize="28" Click="ShowDirtRoom_OnClick" Margin="50,70" />
             <Line Height="30" />
-            <Button x:Name="ReturnButton" Content="Назад" Click="ReturnButton_OnClick" Margin="318,10" />
+            <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Click="ReturnButton_OnClick" Margin="318,10" />
         </StackPanel>
     </Grid>
 </Window>

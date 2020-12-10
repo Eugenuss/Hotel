@@ -5,11 +5,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
         mc:Ignorable="d"
-        Title="Комнаты требующие уборки" Height="450" Width="800">
-    <Grid Background="Lavender">
-        <StackPanel>
-            <DataGrid x:Name="RoomsData" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" IsReadOnly="True"/>
-            <Button x:Name="ReturnButton" Content="Назад" Click="ReturnButton_OnClick" Margin="318,10" />
-        </StackPanel>
-    </Grid>
+        Title="Комнаты требующие уборки" Height="600" Width="800" WindowState="Maximized">
+    <StackPanel Orientation="Vertical">
+        <Grid Background="Lavender">
+            <ScrollViewer Height="500">
+                <DataGrid x:Name="RoomsData" FontSize="28" CanUserAddRows="False" CanUserDeleteRows="False"
+                          CanUserResizeColumns="False" IsReadOnly="True"
+                          HeadersVisibility="All" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Number}" Header="Номер" />
+                        <DataGridTextColumn Binding="{Binding CleanStatus}" Header="Статус уборки" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+        </Grid>
+        <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Click="ReturnButton_OnClick" />
+    </StackPanel>
 </Window>

@@ -42,6 +42,7 @@ namespace Wpf.CartesianChart.Basic_Bars
                     freeRoomsCount[i] = 0;
                 }
 
+                
                 ChartValues<double> values = new ChartValues<double>();
                 int tries = 0;
                 for (int i = 0; i < daysBetween; i++)
@@ -51,8 +52,19 @@ namespace Wpf.CartesianChart.Basic_Bars
                                  dateFrom.AddDays(i).ToShortDateString() + "\'";
                     MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect.conn);
                     sda.Fill(table);
-                    freeRoomsCount[i] += Convert.ToInt32(table.Rows[0].ItemArray.GetValue(0).ToString());
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < table.Rows.Count; j++)
+                        {
+                            freeRoomsCount[i] = Convert.ToInt32(table.Rows[0].ItemArray.GetValue(0).ToString());
+                        }
+                    }
+                    else
+                    {
+                        freeRoomsCount[i] = freeRoomsCount[i - 1];
+                    }
                 }
+
 
                 for (int j = 0; j < freeRoomsCount.Length; j++)
                 {

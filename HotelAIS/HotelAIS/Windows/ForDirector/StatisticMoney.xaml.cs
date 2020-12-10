@@ -104,5 +104,10 @@ namespace Wpf.CartesianChart.Basic_Bars
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
+        
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

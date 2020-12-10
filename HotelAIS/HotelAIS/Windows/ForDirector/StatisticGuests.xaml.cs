@@ -16,8 +16,8 @@ namespace Wpf.CartesianChart.Basic_Bars
         public StatisticGuests(DateTime dateFrom, DateTime dateTo)
         {
             InitializeComponent();
-            try
-            {
+            // try
+            // {
 
                 // // Not so genius code that generate money for the day
                 // double daysBetween = (dateTo - dateFrom).TotalDays;
@@ -52,7 +52,19 @@ namespace Wpf.CartesianChart.Basic_Bars
                                  dateFrom.AddDays(i).ToShortDateString() + "\'";
                     MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect.conn);
                     sda.Fill(table);
-                    freeRoomsCount[i] += 60 - Convert.ToInt32(table.Rows[0].ItemArray.GetValue(0).ToString());
+                    if (table.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < table.Rows.Count; j++)
+                        {
+                            freeRoomsCount[i] = 60 - Convert.ToInt32(table.Rows[0].ItemArray.GetValue(0).ToString());
+                        }
+                    }
+                    else
+                    {
+                        freeRoomsCount[i] = freeRoomsCount[i-1];
+                    }
+                    
+                    
                 }
 
                 for (int j = 0; j < freeRoomsCount.Length; j++)
@@ -95,11 +107,11 @@ namespace Wpf.CartesianChart.Basic_Bars
                 Formatter = value => value.ToString("N");
 
                 DataContext = this;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+            // }
+            // catch (Exception e)
+            // {
+            //     MessageBox.Show(e.Message);
+            // }
         }
 
         public SeriesCollection SeriesCollection { get; set; }

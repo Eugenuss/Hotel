@@ -7,10 +7,6 @@
         mc:Ignorable="d"
         Title="Добавить информацию о комнате" Height="600" Width="800" WindowState="Maximized">
     <Grid>
-        <!-- <Grid.ColumnDefinitions> -->
-        <!--     <ColumnDefinition Width="107*"/> -->
-        <!--     <ColumnDefinition Width="161*"/> -->
-        <!-- </Grid.ColumnDefinitions> -->
         <StackPanel Grid.ColumnSpan="2">
             <TextBlock FontSize="28">
                 <Label Content="Номер комнаты:" Width="116"/>
