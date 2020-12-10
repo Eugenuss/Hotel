@@ -56,5 +56,39 @@ namespace HotelAIS
         {
             this.Close();
         }
+
+        private void BookingFocus(object sender, RoutedEventArgs e)
+        {
+            if (BookingStat.Text == "Статус брони")
+            {
+                BookingStat.Text = "";
+            }
+        }
+
+        private void BookingLost(object sender, RoutedEventArgs e)
+        {
+            if (BookingStat.Text == "")
+            {
+                BookingStat.Text = "Статус брони";
+            }
+            
+        }
+        private void BusyFocus(object sender, RoutedEventArgs e)
+        {
+            if (BusyStat.Text == "Занятость")
+            {
+                BusyStat.Text = "";
+            }
+            
+        }
+        private void BusyLost(object sender, RoutedEventArgs e)
+        {
+            if (BusyStat.Text == "")
+            {
+                BusyStat.Text = "Занятость";
+            }
+            
+        }
+        
     }
 }

@@ -5,13 +5,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
-        Title="Изменить информацию о комнате" Height="450" Width="800">
+        Title="Изменить информацию о комнате" Height="450" Width="800" WindowState="Maximized" FontSize="28">
     <Grid>
         <StackPanel>
-            <ScrollViewer Height="348">
+            <ScrollViewer Height="700">
                 <StackPanel VerticalAlignment="Top">
                     <DataGrid x:Name="ChangeInfData" HeadersVisibility="All"
-                              IsReadOnly="True">
+                              IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns >
+                            
+                            <DataGridTextColumn Binding="{Binding Number}" Header="Номер"/>
+                            <DataGridTextColumn Binding="{Binding Person}" Header="Кол-во персон"/>
+                            <DataGridTextColumn Binding="{Binding BusyStatus}" Header="Занятость"/>
+                            <DataGridTextColumn Binding="{Binding CleanStatus}" Header="Статус уборки"/>
+                            <DataGridTextColumn Binding="{Binding BookingStatus}" Header="Статус брони"/>
+                            <DataGridTextColumn Binding="{Binding Cost}" Header="Стоимость"/>
+                        </DataGrid.Columns>
                     </DataGrid >
                 </StackPanel>
             </ScrollViewer>
@@ -20,9 +29,9 @@
                 <Button x:Name="ChangeInfButton" 
                         Content="Изменить информацию о комнате" Margin="10,0,0,0" 
                         Click="ChangeInfAbout_Click"/>
-                <Button x:Name="ReturnButton" Content="Назад" Width="79" Height="27" Margin="10, 0, 0, 0" 
+                <Button x:Name="ReturnButton" Content="Назад" Margin="10, 0, 0, 0" 
                         Click="ReturnButton_Click"/>
-                <Button x:Name="RefreshButton" Content="Обновить" Width="79" Height="27" Margin="10, 0, 0, 0" 
+                <Button x:Name="RefreshButton" Content="Обновить" Margin="10, 0, 0, 0" 
                         Click="RefreshButton_Click"/>
                 
             </StackPanel>

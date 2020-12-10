@@ -29,7 +29,7 @@ namespace HotelAIS.Windows.Reception
                 string mname = Convert.ToString(TName.Text);
                 int seria = Convert.ToInt32(Series.Text);
                 int number = Convert.ToInt32(Number.Text);
-                string sql = "INSERT INTO `guests` (FirstName, SecondName, MiddleName, Seria, Nomer) VALUES" + 
+                string sql = "INSERT INTO guests (FirstName, SecondName, MiddleName, Seria, Nomer) VALUES" + 
                              $" ('{fname}', '{sname}', '{mname}', {seria}, {number});";
             
                 MySqlConnect conn = new MySqlConnect();
@@ -38,12 +38,92 @@ namespace HotelAIS.Windows.Reception
                 cmd.CommandText = sql;
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("Гость добавлен!", "Уведомление", MessageBoxButton.OK);
+                this.Owner.Show();
+                this.Close();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void NameFocus(object sender, RoutedEventArgs e)
+        {
+            if (FName.Text == "Имя")
+            {
+                FName.Text = "";
+            }
+        }
+        private void SnameFocus(object sender, RoutedEventArgs e)
+        {
+            if (SName.Text == "Фамилия")
+            {
+                SName.Text = "";
+            }
+            
+        }
+        private void MnameFocus(object sender, RoutedEventArgs e)
+        {
+            if (TName.Text == "Отчество")
+            {
+                TName.Text = "";
+            }
+            
+        }
+        private void SeriaFocus(object sender, RoutedEventArgs e)
+        {
+            if (Series.Text == "Серия паспорта")
+            {
+                Series.Text = "";
+            }
+            
+        }
+        private void NomerFocus(object sender, RoutedEventArgs e)
+        {
+            if (Number.Text == "Номер паспорта")
+            {
+                Number.Text = "";
+            }
+        }
+
+        private void NameLost(object sender, RoutedEventArgs e)
+        {
+            if (FName.Text == "")
+            {
+                FName.Text = "Имя";
+            }
+        }
+        private void SnameLost(object sender, RoutedEventArgs e)
+        {
+            if (SName.Text == "")
+            {
+                SName.Text = "Фамилия";
+            }
+            
+        }
+        private void MnameLost(object sender, RoutedEventArgs e)
+        {
+            if (TName.Text == "")
+            {
+                TName.Text = "Отчество";
+            }
+            
+        }
+        private void SeriaLost(object sender, RoutedEventArgs e)
+        {
+            if (Series.Text == "")
+            {
+                Series.Text = "Серия паспорта";
+            }
+            
+        }
+        private void NomerLost(object sender, RoutedEventArgs e)
+        {
+            if (Number.Text == "")
+            {
+                Number.Text = "Номер паспорта";
+            }
+            
         }
         
     }

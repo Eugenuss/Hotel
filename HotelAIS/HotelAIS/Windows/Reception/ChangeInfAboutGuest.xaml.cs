@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Windows;
+using System.Windows.Controls;
 using MySql.Data.MySqlClient;
 
 namespace HotelAIS.Windows.Reception
 {
     public partial class ChangeInfAboutGuest : Window
     {
+        private DataRowView selectedGuest;
+        
         public ChangeInfAboutGuest()
         {
             InitializeComponent();
@@ -40,7 +43,7 @@ namespace HotelAIS.Windows.Reception
 
         private void GuestsData_OnCurrentCellChanged(object sender, EventArgs e)
         {
-            DataRowView selectedGuest = (DataRowView)GuestsData.SelectedItem;
+            selectedGuest = (DataRowView)GuestsData.SelectedItem;
             if (selectedGuest != null)
             {
                 int index = Convert.ToInt32(selectedGuest["ID"].ToString());
@@ -60,9 +63,23 @@ namespace HotelAIS.Windows.Reception
                 connect.Close();
                 UpdateTable(); 
             }
-            
-            
-            
+        }
+        private void DeleteGuest_Click(object sender, RoutedEventArgs e)
+        {
+            if (true)
+            {
+                int index = Convert.ToInt32(selectedGuest["ID"]);
+                string sql = $"DELETE FROM `guests` WHERE `guests`.`ID` = {index};";
+                MySqlConnect connect = new MySqlConnect();
+                connect.Open();
+                MySqlCommand cmd = connect.conn.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                UpdateTable();
+                
+            }
+                
         }
     }
 }

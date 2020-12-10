@@ -5,18 +5,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
-        Title="Свободные комнаты" Height="450" Width="800">
+        Title="Свободные комнаты" Height="450" Width="800" WindowState="Maximized" FontSize="28">
     <Grid>
         <StackPanel>
-            <ScrollViewer Height="348">
+            <ScrollViewer Height="700">
                 <StackPanel VerticalAlignment="Top">
-                    <DataGrid x:Name="RoomsFreeData" HeadersVisibility="All">
+                    <DataGrid x:Name="RoomsFreeData" HeadersVisibility="All" AutoGenerateColumns="False">
+                        <DataGrid.Columns >
+                            
+                            <DataGridTextColumn Binding="{Binding Number}" Header="Номер"/>
+                            <DataGridTextColumn Binding="{Binding Person}" Header="Кол-во персон"/>
+                            <DataGridTextColumn Binding="{Binding BusyStatus}" Header="Занятость"/>
+                            <DataGridTextColumn Binding="{Binding CleanStatus}" Header="Статус уборки"/>
+                            <DataGridTextColumn Binding="{Binding BookingStatus}" Header="Статус брони"/>
+                            <DataGridTextColumn Binding="{Binding Cost}" Header="Стоимость"/>
+                        </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
             </ScrollViewer>
             <Line Height="20"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="ReturnButton" Content="Назад" Width="79" Height="27" Margin="600, 0, 0, 0" 
+                <Button x:Name="ReturnButton" Content="Назад" Margin="600, 0, 0, 0" 
                         Click="ReturnButton_Click"/>
             </StackPanel>
         </StackPanel>

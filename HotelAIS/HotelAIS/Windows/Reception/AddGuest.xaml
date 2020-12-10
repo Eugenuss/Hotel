@@ -5,11 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
-        Title="Добавить гостя" Height="450" Width="800">
-    <StackPanel HorizontalAlignment="Center">
+        Title="Добавить гостя" Height="450" Width="800" WindowState="Maximized" FontSize="28">
+    <StackPanel HorizontalAlignment="Center" >
             <Grid>
                 <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="350"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -23,21 +23,22 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
-                <TextBox Grid.Row="0" x:Name="FName" Height="20" 
-                         Margin="0,10,0,0" Text="Имя" />
-                <TextBox Grid.Row="1" x:Name="SName"  Height="20" 
-                         Margin="0,10,0,0" Text="Фамилия" />
-                <TextBox Grid.Row="2" x:Name="TName"  Height="20" 
-                         Margin="0,10,0,0" Text="Отчество" />
-                <TextBox Grid.Row="3" x:Name="Series"  Height="20" 
-                         Margin="0,10,0,0" Text="Серия паспорта" />
-                <TextBox Grid.Row="4" x:Name="Number"  Height="20" 
-                         Margin="0,10,0,0" Text="Номер паспорта" />
+                <TextBox Grid.Row="0" x:Name="FName"  
+                         Margin="0,10,0,0" Text="Имя" GotFocus="NameFocus" LostFocus="NameLost"/>
+                <TextBox Grid.Row="1" x:Name="SName"   
+                         Margin="0,10,0,0" Text="Фамилия" GotFocus="SnameFocus" LostFocus="SnameLost"/>
+                <TextBox Grid.Row="2" x:Name="TName"   
+                         Margin="0,10,0,0" Text="Отчество" GotFocus="MnameFocus" LostFocus="MnameLost"/>
+                <TextBox Grid.Row="3" x:Name="Series"   
+                         Margin="0,10,0,0" Text="Серия паспорта" GotFocus="SeriaFocus" LostFocus="SeriaLost"/>
+                <TextBox Grid.Row="4" x:Name="Number"   
+                         Margin="0,10,0,0" Text="Номер паспорта" GotFocus="NomerFocus" LostFocus="NomerLost"/>
                 <Button Grid.Row="7" x:Name="AddGuestInTable" Margin="0,10,0,0" 
-                        Width="200" Content="Добавить гостя" 
+                         Content="Добавить гостя" 
                         Click="AddGuest_Click" />
-                <Button Grid.Row="8" x:Name="ReturnBut" Width="200" Content="Назад" 
+                <Button Grid.Row="8" x:Name="ReturnBut" Margin="0,10,0,0" Content="Назад" 
                         Click="ReturnBut_Click" />
+                
            </Grid> 
         </StackPanel>
 </Window>
