@@ -5,29 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="Добавить пользователя" Height="159.828" Width="279.024">
+        Title="Добавить пользователя" Height="600" Width="800" WindowState="Maximized">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="161*"/>
-        </Grid.ColumnDefinitions>
+        <!-- <Grid.ColumnDefinitions> -->
+        <!--     <ColumnDefinition Width="107*" /> -->
+        <!--     <ColumnDefinition Width="161*" /> -->
+        <!-- </Grid.ColumnDefinitions> -->
         <StackPanel Grid.ColumnSpan="2">
-            <TextBlock>
-                <Label Content="Логин:" Width="116"/>
-                <TextBox x:Name="UserLoginTextBox" Width="130"/>
+            <TextBlock FontSize="28">
+                <Label Content="Логин:" Width="116" />
+                <TextBox x:Name="UserLoginTextBox" Width="300" />
             </TextBlock>
-            <TextBlock>
-                <Label Content="Пароль:" Width="116"/>
-                <TextBox x:Name="UserPassTextBox" Width="130"/>
+            <TextBlock FontSize="28">
+                <Label Content="Пароль:" Width="116" />
+                <TextBox x:Name="UserPassTextBox" Width="300" />
             </TextBlock>
-            <TextBlock>
-                <Label Content="Роль:" Width="116"/>
-                <TextBox x:Name="RoleTextBox" Width="130"/>
+            <TextBlock FontSize="28">
+                <Label Content="Роль:" Width="116" />
+                <TextBox x:Name="RoleTextBox" Width="300" />
             </TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Height="120" VerticalAlignment="Top">
-            <Button x:Name="SaveButton" Content="Добавить" Margin="10,84,90,0" Width="88" Click="SaveButton_Click"/>
-            <Button x:Name="CancelButton" Content="Отменить" Margin="0,84,0,0" Width="67" Click="CancelButton_Click"/>
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Height="120" VerticalAlignment="Bottom">
+                <Button x:Name="SaveButton" FontSize="28" Content="Добавить" Margin="1,50,124,1" Width="150"
+                        Click="SaveButton_Click" />
+                <Button x:Name="CancelButton" FontSize="28" Content="Отменить" Margin="1,50,1,1" Width="150"
+                        Click="CancelButton_Click" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

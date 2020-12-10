@@ -11,6 +11,8 @@ namespace HotelAIS.Windows.Reception
 
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
+            Window login = new LoginWindow();
+            login.Show();
             this.Close();
         }
         

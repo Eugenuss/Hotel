@@ -33,7 +33,6 @@ namespace HotelAIS.Windows.ForMaid
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
-                
             }
         }
 
@@ -42,8 +41,8 @@ namespace HotelAIS.Windows.ForMaid
             try
             {
                 string sql = "UPDATE `rooms` Set `CleanStatus`=0 WHERE ID=" + Convert.ToInt32(NumberField.Text);
-                
-                
+
+
                 MySqlConnect connect = new MySqlConnect();
                 connect.Open();
                 MySqlCommand cmd = connect.conn.CreateCommand();
@@ -55,7 +54,6 @@ namespace HotelAIS.Windows.ForMaid
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
-                
             }
         }
 
@@ -68,7 +66,9 @@ namespace HotelAIS.Windows.ForMaid
 
         private void ReturnButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Window login = new LoginWindow();
+            login.Show();
+            this.Close();
         }
     }
 }

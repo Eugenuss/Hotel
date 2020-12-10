@@ -20,14 +20,10 @@ SET time_zone = "+00:00";
 --
 -- База данных: `hotel`
 --
+create database hotel;
+use hotel; 
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `guests`
---
-
-CREATE TABLE `guests` (
+CREATE TABLE hotel.guests (
   `ID` int(6) NOT NULL,
   `FirstName` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `SecondName` text COLLATE utf8mb4_unicode_ci NOT NULL,

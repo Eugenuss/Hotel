@@ -5,29 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="Добавить информацию о комнате" Height="158.584" Width="270.03">
+        Title="Добавить информацию о комнате" Height="600" Width="800" WindowState="Maximized">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="161*"/>
-        </Grid.ColumnDefinitions>
+        <!-- <Grid.ColumnDefinitions> -->
+        <!--     <ColumnDefinition Width="107*"/> -->
+        <!--     <ColumnDefinition Width="161*"/> -->
+        <!-- </Grid.ColumnDefinitions> -->
         <StackPanel Grid.ColumnSpan="2">
-            <TextBlock>
+            <TextBlock FontSize="28">
                 <Label Content="Номер комнаты:" Width="116"/>
-                <TextBox x:Name="RoomNumTextBox" Width="130"/>
+                <TextBox x:Name="RoomNumTextBox" Width="380"/>
             </TextBlock>
-            <TextBlock>
+            <TextBlock FontSize="28">
                 <Label Content="Количество мест:" Width="116"/>
-                <TextBox x:Name="RoomPersonNumTextBox" Width="130"/>
+                <TextBox x:Name="RoomPersonNumTextBox" Width="380"/>
             </TextBlock>
-            <TextBlock>
+            <TextBlock FontSize="28">
                 <Label Content="Стоимость за день:"/>
-                <TextBox x:Name="CostTextBox" Width="130"/>
+                <TextBox x:Name="CostTextBox" Width="242"/>
             </TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Button x:Name="SaveButton" FontSize="28" Content="Добавить" Margin="10,92,90,10" Width="200" Click="SaveButton_Click"/>
+                <Button x:Name="CancelButton" FontSize="28" Content="Отменить" Margin="0,92,0,10" Width="200" Click="CancelButton_Click"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-            <Button x:Name="SaveButton" Content="Добавить" Margin="10,92,90,10" Width="88" Click="SaveButton_Click"/>
-            <Button x:Name="CancelButton" Content="Отменить" Margin="0,92,0,10" Width="67" Click="CancelButton_Click"/>
-        </StackPanel>
+        
     </Grid>
 </Window>

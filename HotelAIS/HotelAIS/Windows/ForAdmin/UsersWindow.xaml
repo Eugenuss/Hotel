@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="Пользователи" Height="450" Width="800">
+        Title="Пользователи" Height="450" Width="800" WindowState="Maximized">
     <Grid>
         <StackPanel>
-            <ScrollViewer Height="348">
+            <ScrollViewer Height="500">
                 <StackPanel VerticalAlignment="Top">
-                    <DataGrid x:Name="UsersData" HeadersVisibility="All" AutoGenerateColumns="False">
+                    <DataGrid x:Name="UsersData" FontSize="28" HeadersVisibility="All" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
                             <DataGridTextColumn Binding="{Binding Login}" Header="Логин"/>
@@ -22,9 +22,9 @@
             </ScrollViewer>
             <Line Height="20"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="AddUserButton" Content="Добавить пользователя" Width="139" Margin="10, 0, 10, 0" Click="AddUserButton_Click"/>
-                <Button x:Name="DelUserButton" Content="Удалить пользователя" Width="132" Margin="10, 0, 10, 0" Click="DelUserButton_Click"/>
-                <Button x:Name="ReturnButton" Content="Назад" Width="64" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
+                <Button x:Name="AddUserButton" FontSize="28" Content="Добавить пользователя" Width="350" Margin="10, 0, 10, 0" Click="AddUserButton_Click"/>
+                <Button x:Name="DelUserButton" FontSize="28"  Content="Удалить пользователя" Width="300" Margin="10, 0, 10, 0" Click="DelUserButton_Click"/>
+                <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Width="100" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -46,5 +46,11 @@ namespace HotelAIS.Windows.ForDirector
             if (CalendarTo.SelectedDate != null) dateTo = (DateTime) CalendarTo.SelectedDate;
             if (CalendarFrom.SelectedDate != null) dateFrom = (DateTime) CalendarFrom.SelectedDate;
         }
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window login = new LoginWindow();
+            login.Show();
+            this.Close();
+        }
     }
 }

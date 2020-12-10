@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows" xmlns:local1="clr-namespace:HotelAIS"
         mc:Ignorable="d"
-        Title="Комнаты" Height="450" Width="800">
+        Title="Комнаты" Height="600" Width="1050" WindowState="Maximized">
     <Grid>
         <StackPanel>
-            <ScrollViewer Height="348">
+            <ScrollViewer Height="500">
                 <StackPanel VerticalAlignment="Top">
-                    <DataGrid x:Name="RoomsData" HeadersVisibility="All" AutoGenerateColumns="False">
+                    <DataGrid x:Name="RoomsData" FontSize="28" HeadersVisibility="All" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Number}" Header="Номер"/>
                             <DataGridTextColumn Binding="{Binding Person}" Header="Кол-во мест"/>
@@ -24,9 +24,9 @@
             </ScrollViewer>
             <Line Height="20"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="AddRoomButton" Content="Добавить комнату" Width="110" Margin="10, 0, 10, 0" Click="AddRoomButton_Click"/>
-                <Button x:Name="DelRoomButton" Content="Удалить комнату" Width="111" Margin="10, 0, 10, 0" Click="DelRoomButton_Click"/>
-                <Button x:Name="ReturnButton" Content="Назад" Width="64" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
+                <Button x:Name="AddRoomButton" FontSize="28" Content="Добавить комнату" Width="300" Margin="10, 0, 10, 0" Click="AddRoomButton_Click"/>
+                <Button x:Name="DelRoomButton" FontSize="28" Content="Удалить комнату" Width="300" Margin="10, 0, 10, 0" Click="DelRoomButton_Click"/>
+                <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Width="120" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
