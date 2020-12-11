@@ -16,8 +16,8 @@ namespace Wpf.CartesianChart.Basic_Bars
         public StatisticGuests(DateTime dateFrom, DateTime dateTo)
         {
             InitializeComponent();
-            // try
-            // {
+            try
+            {
 
                 // // Not so genius code that generate money for the day
                 // double daysBetween = (dateTo - dateFrom).TotalDays;
@@ -79,7 +79,9 @@ namespace Wpf.CartesianChart.Basic_Bars
                     new ColumnSeries
                     {
                         Title = "Кол-во гостей.",
-                        Values = values
+                        Values = values,
+                        ColumnPadding=0,
+                        Opacity = 0
                     }
                 };
 
@@ -107,11 +109,11 @@ namespace Wpf.CartesianChart.Basic_Bars
                 Formatter = value => value.ToString("N");
 
                 DataContext = this;
-            // }
-            // catch (Exception e)
-            // {
-            //     MessageBox.Show(e.Message);
-            // }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         public SeriesCollection SeriesCollection { get; set; }

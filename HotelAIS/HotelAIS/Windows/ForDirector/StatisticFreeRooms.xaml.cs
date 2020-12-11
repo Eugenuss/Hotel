@@ -78,7 +78,9 @@ namespace Wpf.CartesianChart.Basic_Bars
                     new ColumnSeries
                     {
                         Title = "Кол-во свободных комнат.",
-                        Values = values
+                        Values = values,
+                        ColumnPadding=0,
+                        Opacity = 0
                     }
                 };
 

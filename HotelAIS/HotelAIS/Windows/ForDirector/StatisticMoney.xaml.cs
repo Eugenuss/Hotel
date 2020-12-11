@@ -66,7 +66,10 @@ namespace Wpf.CartesianChart.Basic_Bars
                     new ColumnSeries
                     {
                         Title = "Доход с комнат.",
-                        Values = values
+                        Values = values,
+                        ColumnPadding=0,
+                        Opacity = 0
+                        
                     }
                 };
 
@@ -92,7 +95,7 @@ namespace Wpf.CartesianChart.Basic_Bars
 
 
                 Formatter = value => value.ToString("N");
-
+                
                 DataContext = this;
             }
             catch (Exception e)

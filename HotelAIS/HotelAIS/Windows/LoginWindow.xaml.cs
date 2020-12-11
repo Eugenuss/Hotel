@@ -25,8 +25,9 @@ namespace HotelAIS.Windows
         {
             try
             {
-                string sql = $"select * from users where Login='{UserName.Text}' and Password='{UserPassword.Password}'";
-            
+                string sql =
+                    $"select * from users where Login='{UserName.Text}' and Password='{UserPassword.Password}'";
+
                 MySqlConnect connect = new MySqlConnect();
                 connect.Open();
                 MySqlDataAdapter sda = new MySqlDataAdapter(sql, connect.conn);
@@ -35,54 +36,46 @@ namespace HotelAIS.Windows
                 connect.Close();
 
 
-
                 if (table.Rows.Count == 1)
                 {
-                    
+                    MessageBox.Show("Вход выполнен успешно! ", "Успех!", MessageBoxButton.OK, MessageBoxImage.Asterisk, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly);
                     switch (table.Rows[0].ItemArray.GetValue(3).ToString())
                     {
                         case "Admin":
-                            MessageBox.Show("Вход выполнен успешно! ");
                             Window adminMainWindow = new AdminMainWindow();
                             adminMainWindow.Owner = this;
                             this.Hide();
                             adminMainWindow.Show();
                             break;
                         case "Director":
-                            MessageBox.Show("Вход выполнен успешно! ");
                             Window actionsForDirector = new ActionsForDirector();
                             actionsForDirector.Owner = this;
                             this.Hide();
                             actionsForDirector.Show();
                             break;
                         case "Reception":
-                            MessageBox.Show("Вход выполнен успешно! ");
                             Window receptionActions = new ReceptionActions();
                             receptionActions.Owner = this;
                             this.Hide();
                             receptionActions.Show();
                             break;
                         case "Maid":
-                            MessageBox.Show("Вход выполнен успешно! ");
                             Window actionsForMaid = new ActionsForMaid();
                             actionsForMaid.Owner = this;
                             this.Hide();
                             actionsForMaid.Show();
                             break;
-                        default:
-                            MessageBox.Show("Данные введены неверно! ");
-                            
-                            break;
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("Данные введены неверно! ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.Yes, MessageBoxOptions.DefaultDesktopOnly);
+                }
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-
-
         }
 
         private void UserName_GotFocus(object sender, RoutedEventArgs e)
@@ -106,7 +99,6 @@ namespace HotelAIS.Windows
             if (UserPassword.Password == "Пароль")
             {
                 UserPassword.Password = "";
-   
             }
         }
 

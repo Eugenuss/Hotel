@@ -2,3 +2,5 @@
 Ност: 26.146.217.182
 Пароль: lilboss
 Ещё какой-то пароль: QXcRCdUEinObaK4b
+
+http://26.146.217.182/openserver/phpmyadmin/index.php
