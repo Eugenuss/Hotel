@@ -9,11 +9,11 @@
     <Grid>
         <StackPanel Grid.ColumnSpan="2">
             <TextBlock FontSize="28">
-                <Label Content="Номер комнаты:" Width="116"/>
+                <Label Content="Номер комнаты:" Width="255"/>
                 <TextBox x:Name="RoomNumTextBox" Width="380"/>
             </TextBlock>
             <TextBlock FontSize="28">
-                <Label Content="Количество мест:" Width="116"/>
+                <Label Content="Количество мест:" Width="255"/>
                 <TextBox x:Name="RoomPersonNumTextBox" Width="380"/>
             </TextBlock>
             <TextBlock FontSize="28">
