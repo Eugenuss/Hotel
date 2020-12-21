@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="Добавить информацию о комнате" Height="600" Width="800" WindowState="Maximized">
+        Title="Добавить информацию о комнате" Height="600" Width="800" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
     <Grid>
         <StackPanel Grid.ColumnSpan="2">
             <TextBlock FontSize="28">

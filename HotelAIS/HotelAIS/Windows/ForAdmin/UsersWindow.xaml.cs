@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,13 @@ namespace HotelAIS.Windows
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
             }
         }
     }

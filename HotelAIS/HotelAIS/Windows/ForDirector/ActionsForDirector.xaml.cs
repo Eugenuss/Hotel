@@ -1,6 +1,8 @@
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Wpf.CartesianChart.Basic_Bars;
 
 
@@ -51,6 +53,13 @@ namespace HotelAIS.Windows.ForDirector
             Window login = new LoginWindow();
             login.Show();
             this.Close();
+        }
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
+            }
         }
     }
 }

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
 using MySql.Data.MySqlClient;
 
@@ -36,6 +38,13 @@ namespace HotelAIS.Windows.ForMaid
         private void ReturnButton_OnClick(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
+            }
         }
     }
 }

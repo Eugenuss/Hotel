@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
-        Title="Свободные комнаты" Height="450" Width="800" WindowState="Maximized" FontSize="28">
+        Title="Свободные комнаты" Height="450" Width="800" WindowState="Maximized" FontSize="28" KeyDown="LoginWindow_OnKeyDown">
     <Grid>
         <StackPanel>
             <ScrollViewer Height="700">

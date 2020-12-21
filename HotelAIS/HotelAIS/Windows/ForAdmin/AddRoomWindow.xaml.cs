@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Input;
 
 
 namespace HotelAIS.Windows
@@ -47,6 +49,13 @@ namespace HotelAIS.Windows
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
             }
         }
     }

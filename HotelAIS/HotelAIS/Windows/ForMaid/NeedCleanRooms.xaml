@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS.Windows.ForMaid"
         mc:Ignorable="d"
-        Title="Комнаты требующие уборки" Height="600" Width="800" WindowState="Maximized">
+        Title="Комнаты требующие уборки" Height="600" Width="800" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
     <StackPanel Orientation="Vertical">
         <Grid Background="Lavender">
             <ScrollViewer Height="500">

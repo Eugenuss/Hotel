@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace HotelAIS.Windows
             newUser.Password = UserPassTextBox.Text;
             newUser.Role = RoleTextBox.Text;
             string sqlRequest = $"INSERT INTO `users` (`ID`, `Login`, `Password`, `Role`)" +
-                $" VALUES (NULL, '{newUser.Login}', '{newUser.Password}', '{newUser.Role}');";
+                                $" VALUES (NULL, '{newUser.Login}', '{newUser.Password}', '{newUser.Role}');";
             XApp.openDBConnection();
             MySqlCommand cmd = XApp.connection.CreateCommand();
             cmd.CommandText = sqlRequest;
@@ -50,6 +51,14 @@ namespace HotelAIS.Windows
             XApp.closeDBConnection();
             ownerWin.UpdateTable();
             this.Close();
+        }
+
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
+            }
         }
     }
 }

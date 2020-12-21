@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Input;
 using MySql.Data.MySqlClient;
 
 namespace HotelAIS.Windows.Reception
@@ -125,6 +127,12 @@ namespace HotelAIS.Windows.Reception
             }
             
         }
-        
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
+            }
+        }
     }
 }

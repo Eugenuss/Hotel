@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HotelAIS"
         mc:Ignorable="d"
-        Title="Изменить статус комнаты" Height="600" Width="800" WindowState="Maximized" FontSize="28">
+        Title="Изменить статус комнаты" Height="600" Width="800" WindowState="Maximized" FontSize="28" KeyDown="LoginWindow_OnKeyDown">
     <StackPanel>
         <Grid>
             <StackPanel VerticalAlignment="Top">

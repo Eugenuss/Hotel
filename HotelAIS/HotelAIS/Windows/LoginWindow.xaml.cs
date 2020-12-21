@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
+using System.Windows.Input;
 using HotelAIS.Windows.ForDirector;
 using HotelAIS.Windows.ForMaid;
 using HotelAIS.Windows.Reception;
@@ -107,6 +110,14 @@ namespace HotelAIS.Windows
             if (UserPassword.Password == "")
             {
                 UserPassword.Password = "Пароль";
+            }
+        }
+
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
             }
         }
     }

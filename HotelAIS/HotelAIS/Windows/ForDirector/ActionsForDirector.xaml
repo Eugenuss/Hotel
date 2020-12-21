@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HotelAIS.Windows.ForDirector"
 
         mc:Ignorable="d"
-        Title="Меню для директора" Height="600" Width="800" WindowState="Maximized">
+        Title="Меню для директора" Height="600" Width="800" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
     <Grid>
         <StackPanel>
             <TextBlock Text="Меню действий для директора" FontSize="35" HorizontalAlignment="Center" />

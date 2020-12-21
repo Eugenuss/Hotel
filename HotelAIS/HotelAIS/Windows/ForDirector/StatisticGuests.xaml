@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpf.CartesianChart.Basic_Bars"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d" 
-        d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance local:StatisticMoney}" WindowState="Maximized" >
+        d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance local:StatisticMoney}" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
     <Grid>
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Left">
             <lvc:CartesianChart.AxisX>

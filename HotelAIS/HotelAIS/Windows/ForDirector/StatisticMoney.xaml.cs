@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Effects;
 using HotelAIS;
 using HotelAIS.Windows.ForDirector;
@@ -111,6 +113,13 @@ namespace Wpf.CartesianChart.Basic_Bars
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
+using System.Windows.Input;
 
 namespace HotelAIS.Windows.Reception
 {
@@ -43,6 +45,13 @@ namespace HotelAIS.Windows.Reception
             Window changeInfAboutGuest = new ChangeInfAboutGuest();
             changeInfAboutGuest.Owner = this;
             changeInfAboutGuest.Show();
+        }
+        private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Process.Start("Manual.pdf");
+            }
         }
     }
 }
