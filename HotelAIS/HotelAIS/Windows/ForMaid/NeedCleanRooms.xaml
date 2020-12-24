@@ -19,6 +19,7 @@
                 </DataGrid>
             </ScrollViewer>
         </Grid>
-        <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Click="ReturnButton_OnClick" />
+        <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Click="ReturnButton_OnClick" 
+                Height="45" Width="250" />
     </StackPanel>
 </Window>

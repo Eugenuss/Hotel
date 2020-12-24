@@ -45,7 +45,17 @@ namespace HotelAIS.Windows.Reception
 
         private void GuestsData_OnCurrentCellChanged(object sender, EventArgs e)
         {
-            selectedGuest = (DataRowView)GuestsData.SelectedItem;
+            try
+            {
+                selectedGuest = (DataRowView)GuestsData.SelectedItem;
+            }
+            catch (InvalidCastException)
+            {
+                
+            }
+            
+            
+            
             if (selectedGuest != null)
             {
                 int index = Convert.ToInt32(selectedGuest["ID"].ToString());
@@ -70,15 +80,24 @@ namespace HotelAIS.Windows.Reception
         {
             if (true)
             {
-                int index = Convert.ToInt32(selectedGuest["ID"]);
-                string sql = $"DELETE FROM `guests` WHERE `guests`.`ID` = {index};";
-                MySqlConnect connect = new MySqlConnect();
-                connect.Open();
-                MySqlCommand cmd = connect.conn.CreateCommand();
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                UpdateTable();
+                try
+                {
+                    int index = Convert.ToInt32(selectedGuest["ID"]);
+                    string sql = $"DELETE FROM `guests` WHERE `guests`.`ID` = {index};";
+                    MySqlConnect connect = new MySqlConnect();
+                    connect.Open();
+                    MySqlCommand cmd = connect.conn.CreateCommand();
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    UpdateTable();
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Сначала выберите строку!", "Уведомление", MessageBoxButton.OK);
+                }
+                
+                
                 
             }
                 

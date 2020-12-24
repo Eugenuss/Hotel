@@ -21,8 +21,10 @@
                 <TextBox x:Name="CostTextBox" Width="242"/>
             </TextBlock>
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-                <Button x:Name="SaveButton" FontSize="28" Content="Добавить" Margin="10,92,90,10" Width="200" Click="SaveButton_Click"/>
-                <Button x:Name="CancelButton" FontSize="28" Content="Отменить" Margin="0,92,0,10" Width="200" Click="CancelButton_Click"/>
+                <Button x:Name="SaveButton" FontSize="28" Content="Добавить" Margin="10,92,90,10" Width="200" 
+                        Click="SaveButton_Click" Height="45"/>
+                <Button x:Name="CancelButton" FontSize="28" Content="Отменить" Margin="0,92,0,10" Width="200" 
+                        Click="CancelButton_Click" Height="45"/>
             </StackPanel>
         </StackPanel>
         

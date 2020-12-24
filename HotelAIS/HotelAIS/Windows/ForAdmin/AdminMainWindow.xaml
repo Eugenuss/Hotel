@@ -8,11 +8,14 @@
     <Grid>
         <StackPanel>
             <Line Height="50"/>
-            <Button x:Name="RoomsButton" FontSize="28" Content="Комнаты" Click="RoomsButton_Clicked" Margin="276,0"/>
+            <Button x:Name="RoomsButton" FontSize="28" Content="Комнаты" Click="RoomsButton_Clicked" 
+                    Margin="276,0" Height="45"/>
             <Line Height="10"/>
-            <Button x:Name="UserButton" FontSize="28" Content="Пользователи" Click="UserButton_Clicked" Margin="276,0"/>
+            <Button x:Name="UserButton" FontSize="28" Content="Пользователи" Click="UserButton_Clicked" 
+                    Margin="276,0" Height="45"/>
             <Line Height="30"/>
-            <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Click="ReturnButton_Clicked" Margin="318,0,321,0"/>
+            <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Click="ReturnButton_Clicked" 
+                    Margin="318,0,321,0" Height="45" Width="150"/>
         </StackPanel>
     </Grid>
 </Window>

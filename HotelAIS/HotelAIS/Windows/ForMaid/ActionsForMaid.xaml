@@ -13,15 +13,20 @@
 
             <TextBlock Text="Введите номер комнаты" FontSize="28" HorizontalAlignment="Center" />
 
-            <TextBox x:Name="NumberField" MaxLength="3" FontSize="28"  Margin="276,10"> Номер комнаты </TextBox>
+            <TextBox x:Name="NumberField" MaxLength="3" FontSize="28"  
+                     Width="670" Margin="276,10"> Номер комнаты </TextBox>
 
-            <Button x:Name="CleanBtn" Content="Убрана" FontSize="28" Click="CleanBtn_OnClick" Margin="276,10" />
+            <Button x:Name="CleanBtn" Content="Убрана" FontSize="28" Click="CleanBtn_OnClick" Margin="276,10"
+                    Height="45" Width="670"/>
 
-            <Button x:Name="NeedCleanBtn" Content="Требуется уборка" FontSize="28" Click="NeedCleanBtn_OnClick" Margin="276,10" />
+            <Button x:Name="NeedCleanBtn" Content="Требуется уборка" FontSize="28" Click="NeedCleanBtn_OnClick" 
+                    Margin="276,10" Height="45" Width="670"/>
 
-            <Button x:Name="ShowDirtRoom" Content="Показать комнаты в которых требуется уборка" FontSize="28" Click="ShowDirtRoom_OnClick" Margin="50,70" />
+            <Button x:Name="ShowDirtRoom" Content="Показать комнаты в которых требуется уборка" FontSize="28" 
+                    Click="ShowDirtRoom_OnClick" Margin="50,70" Height="45" Width="670"/>
             <Line Height="30" />
-            <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Click="ReturnButton_OnClick" Margin="318,10" />
+            <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Click="ReturnButton_OnClick" 
+                    Margin="318,10" Height="45" Width="250" />
         </StackPanel>
     </Grid>
 </Window>

@@ -9,6 +9,8 @@ using HotelAIS.Windows.ForDirector;
 using HotelAIS.Windows.ForMaid;
 using HotelAIS.Windows.Reception;
 using MySql.Data.MySqlClient;
+using MaterialDesignColors;
+using MaterialDesignThemes.Wpf;
 
 
 namespace HotelAIS.Windows

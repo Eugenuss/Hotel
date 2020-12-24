@@ -26,9 +26,9 @@
             </TextBlock>
             <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Height="120" VerticalAlignment="Bottom">
                 <Button x:Name="SaveButton" FontSize="28" Content="Добавить" Margin="1,50,124,1" Width="150"
-                        Click="SaveButton_Click" />
+                        Click="SaveButton_Click" Height="45"/>
                 <Button x:Name="CancelButton" FontSize="28" Content="Отменить" Margin="1,50,1,1" Width="150"
-                        Click="CancelButton_Click" />
+                        Click="CancelButton_Click" Height="45"/>
             </StackPanel>
         </StackPanel>
     </Grid>

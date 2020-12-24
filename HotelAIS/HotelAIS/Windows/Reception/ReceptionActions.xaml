@@ -6,22 +6,26 @@
         xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
         mc:Ignorable="d"
         Title="Меню для ресепшн" Height="450" Width="800" WindowState="Maximized" FontSize="28" KeyDown="LoginWindow_OnKeyDown">
-    <Grid>
+        
+        <Grid HorizontalAlignment="Center">
         <StackPanel>
-                <Line Height="50"/>
-            <Button x:Name="FreeRoomsBut" Content="Показать свободные комнаты" 
-                    Click="FreeRoomsBut_Click" Margin="50,0,50,0"/>
+            <Line Height="50"/>
+            <Button x:Name="FreeRoomsBut" Content="Показать свободные комнаты" FontSize="28" Height="45" FontFamily="Tahoma"
+                    Click="FreeRoomsBut_Click" />
             <Line Height="10"/>
-            <Button x:Name="ChangeRoomStatBut" Content="Изменить статус комнаты" 
-                    Click="ChangeRoomStatBut_Click" Margin="50,0,50,0"/>
+            <Button x:Name="ChangeRoomStatBut" Content="Изменить статус комнаты" FontSize="28" Height="45" FontFamily="Tahoma"
+                    Click="ChangeRoomStatBut_Click" />
             <Line Height="10"/>
-            <Button x:Name="AddGuestBut" Content="Добавить гостя" 
-                    Click="AddGuestBut_Click" Margin="50,0,50,0"/>
+            <Button x:Name="AddGuestBut" Content="Добавить гостя" FontSize="28" Height="45" FontFamily="Tahoma"
+                    Click="AddGuestBut_Click" />
             <Line Height="10"/>
-            <Button x:Name="ChangeGuestInf" Content="Изменить информацию о госте" 
-                    Click="ChangeGuestBut_Click" Margin="50,0,50,0"/>
-                <Button x:Name="ReturnButton" Content="Назад" 
-                        Click="ReturnButton_Click" Margin="50,10,50,0"/>
+            <Button x:Name="ChangeGuestInf" Content="Изменить информацию о госте" FontSize="28" Height="45" FontFamily="Tahoma"
+                    Click="ChangeGuestBut_Click" />
+            <Line Height="10"/>
+            <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Height="45" FontFamily="Tahoma"
+                    Click="ReturnButton_Click" />
         </StackPanel>
     </Grid>
 </Window>
+
+

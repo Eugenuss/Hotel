@@ -24,9 +24,12 @@
             </ScrollViewer>
             <Line Height="20"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="AddRoomButton" FontSize="28" Content="Добавить комнату" Width="300" Margin="10, 0, 10, 0" Click="AddRoomButton_Click"/>
-                <Button x:Name="DelRoomButton" FontSize="28" Content="Удалить комнату" Width="300" Margin="10, 0, 10, 0" Click="DelRoomButton_Click"/>
-                <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Width="120" Margin="0, 0, 10, 0" Click="ReturnButton_Click"/>
+                <Button x:Name="AddRoomButton" FontSize="28" Content="Добавить комнату" Width="300" 
+                        Margin="10, 0, 10, 0" Click="AddRoomButton_Click" Height="45"/>
+                <Button x:Name="DelRoomButton" FontSize="28" Content="Удалить комнату" Width="300" 
+                        Margin="10, 0, 10, 0" Click="DelRoomButton_Click" Height="45"/>
+                <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Width="150" 
+                        Margin="0, 0, 10, 0" Click="ReturnButton_Click" Height="45"/>
             </StackPanel>
         </StackPanel>
     </Grid>

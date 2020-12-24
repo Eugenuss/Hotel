@@ -6,17 +6,22 @@
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
         Title="Вход" Height="450" Width="800" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
-    <Grid>
-        <StackPanel>
-            <Line Height="100"/>
-            <TextBlock Text="Аутентификация" FontSize="28" Margin="282,0,273,0" TextAlignment="Center"/>
+    
+    <Grid >
+        <StackPanel HorizontalAlignment="Center">
+            <Line Height="80"/>
+            <TextBlock Text="Аутентификация" FontSize="28" TextAlignment="Center"/>
             <Line Height="20"/>
-            <TextBox x:Name="UserName" Text="Имя пользователя" FontSize="28" Margin="282,0,273,0" GotFocus="UserName_GotFocus" LostFocus="UserName_LostFocus"/>
+            <TextBox x:Name="UserName" Text="Имя пользователя" FontSize="28" Width="350" 
+                     GotFocus="UserName_GotFocus" LostFocus="UserName_LostFocus"/>
             <Line Height="10"/>
-            <PasswordBox x:Name="UserPassword" Password="Пароль" FontSize="28" Margin="282,0,273,0" GotFocus="UserPassword_GotFocus" LostFocus="UserPassword_LostFocus"/>
+            <PasswordBox x:Name="UserPassword" Password="Пароль" FontSize="28" Width="350"
+                         GotFocus="UserPassword_GotFocus" LostFocus="UserPassword_LostFocus"/>
             <Line Height="20"/>
-            <Button x:Name="LoginButton" Content="Войти" FontSize="28" Margin="282,0,273,0" Click="LoginButton_Click"/>
-            <Line Height="10"/>
+            <Button x:Name="LoginButton" Content="Войти" FontSize="28" Width="150" Height="45"
+                    Click="LoginButton_Click" />
+            <!--Style="{DynamicResource MaterialDesignFlatButton}"-->
+            
         </StackPanel>
     </Grid>
 </Window>
