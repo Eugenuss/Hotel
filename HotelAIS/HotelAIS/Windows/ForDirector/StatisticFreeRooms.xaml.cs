@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using HotelAIS;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -46,7 +47,6 @@ namespace Wpf.CartesianChart.Basic_Bars
 
                 
                 ChartValues<double> values = new ChartValues<double>();
-                int tries = 0;
                 for (int i = 0; i < daysBetween; i++)
                 {
                     DataTable table = new DataTable();
@@ -82,7 +82,7 @@ namespace Wpf.CartesianChart.Basic_Bars
                         Title = "Кол-во свободных комнат.",
                         Values = values,
                         ColumnPadding=0,
-                        Opacity = 0
+                        Opacity = 0,
                     }
                 };
 
@@ -94,8 +94,7 @@ namespace Wpf.CartesianChart.Basic_Bars
                 }
 
                 Labels = dateBetween.ToArray();
-
-
+                
                 Formatter = value => value.ToString("N");
 
                 DataContext = this;

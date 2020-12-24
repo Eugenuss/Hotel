@@ -9,12 +9,41 @@
         d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance local:StatisticMoney}"
         WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="lvc:ColumnSeries">
+                <Setter Property="StrokeThickness" Value="0" />
+                <!-- <Setter Property="Stroke" Value="White"></Setter> -->
+                <Setter Property="Fill" Value="#673AB7" />
+                <!-- <Setter Property="MaxColumnWidth" Value="5"></Setter> -->
+            </Style>
+            <Style TargetType="lvc:Axis">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Foreground" Value="DimGray" />
+                <Style.Triggers>
+                    <Trigger Property="AxisOrientation" Value="Y">
+                        <Setter Property="IsMerged" Value="True" />
+                        <!-- <Setter Property="MaxValue" Value="10"></Setter> -->
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="lvc:Separator">
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Stroke" Value="DimGray" />
+                <Style.Triggers>
+                    <Trigger Property="AxisOrientation" Value="X">
+                        <Setter Property="IsEnabled" Value="False" />
+                        <Setter Property="Step" Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Border Grid.Row="0" Grid.RowSpan="3" Background="White" />
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Left">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Дни" Labels="{Binding Labels}" />
             </lvc:CartesianChart.AxisX>
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Доход в рублях" LabelFormatter="{Binding Formatter}" />
+                <lvc:Axis Title="Свободных комнат" LabelFormatter="{Binding Formatter}" />
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
     </Grid>
