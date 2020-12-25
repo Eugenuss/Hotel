@@ -2,8 +2,8 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 26.146.217.182:3306
--- Время создания: Дек 07 2020 г., 17:14
+-- Хост: 127.0.0.1:3306
+-- Время создания: Дек 25 2020 г., 17:32
 -- Версия сервера: 10.3.22-MariaDB-log
 -- Версия PHP: 7.1.33
 
@@ -22,6 +22,11 @@ SET time_zone = "+00:00";
 --
 create database hotel;
 use hotel; 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `guests`
+--
 
 CREATE TABLE hotel.guests (
   `ID` int(6) NOT NULL,
@@ -30,15 +35,18 @@ CREATE TABLE hotel.guests (
   `MiddleName` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `Seria` int(4) NOT NULL,
   `Nomer` int(6) NOT NULL,
-  `RoomNumber` int(4) NOT NULL
+  `Room` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `guests`
 --
 
-INSERT INTO `guests` (`ID`, `FirstName`, `SecondName`, `MiddleName`, `Seria`, `Nomer`, `RoomNumber`) VALUES
-(1, 'Имя', 'Фамилия', 'Отчество', 1111, 111111, 1);
+INSERT INTO `guests` (`ID`, `FirstName`, `SecondName`, `MiddleName`, `Seria`, `Nomer`, `Room`) VALUES
+(2, 'Иоан', 'Иванович', 'Иванов', 1234, 123456, 1),
+(9, 'Егор', 'Гордейчик', 'Георгиевич', 3456, 123654, 23),
+(14, 'Валерий', 'Сазонов', 'Валерьевич', 3316, 758430, 43),
+(15, 'Евгений', 'Смирнов', 'Ефимович', 9873, 897635, 3);
 
 -- --------------------------------------------------------
 
@@ -6354,10 +6362,9 @@ CREATE TABLE `rooms` (
 
 INSERT INTO `rooms` (`ID`, `Number`, `Person`, `BusyStatus`, `CleanStatus`, `BookingStatus`, `Cost`) VALUES
 (1, 1, 3, 1, 0, 1, 45000),
-(2, 2, 2, 0, 0, 0, 30000),
-(3, 3, 1, 1, 0, 0, 15000),
+(2, 2, 2, 1, 0, 1, 30000),
+(3, 3, 1, 0, 0, 1, 15000),
 (4, 4, 3, 0, 0, 0, 45000),
-(5, 5, 2, 0, 0, 0, 30000),
 (6, 6, 1, 1, 0, 0, 15000),
 (7, 7, 1, 1, 0, 0, 15000),
 (8, 8, 1, 1, 0, 0, 15000),
@@ -6365,7 +6372,7 @@ INSERT INTO `rooms` (`ID`, `Number`, `Person`, `BusyStatus`, `CleanStatus`, `Boo
 (10, 10, 1, 1, 0, 0, 15000),
 (11, 11, 1, 1, 0, 0, 15000),
 (12, 12, 2, 0, 0, 0, 30000),
-(13, 13, 1, 1, 0, 0, 15000),
+(13, 13, 1, 0, 0, 1, 15000),
 (14, 14, 3, 0, 0, 0, 45000),
 (15, 15, 1, 1, 0, 0, 15000),
 (16, 16, 2, 0, 0, 0, 30000),
@@ -6412,7 +6419,8 @@ INSERT INTO `rooms` (`ID`, `Number`, `Person`, `BusyStatus`, `CleanStatus`, `Boo
 (57, 57, 3, 0, 0, 0, 45000),
 (58, 58, 3, 0, 0, 0, 45000),
 (59, 59, 2, 0, 0, 0, 30000),
-(60, 60, 1, 0, 0, 0, 15000);
+(60, 60, 1, 0, 0, 0, 15000),
+(62, 61, 1, 1, 1, 1, 23455);
 
 -- --------------------------------------------------------
 
@@ -6474,7 +6482,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `guests`
 --
 ALTER TABLE `guests`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `hotelhistory`
@@ -6486,13 +6494,13 @@ ALTER TABLE `hotelhistory`
 -- AUTO_INCREMENT для таблицы `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
