@@ -10,7 +10,8 @@ namespace HotelAIS.Windows.Reception
 {
     public partial class ChangeInfAboutGuest : Window
     {
-        private DataRowView currentGuest;
+        
+        private DataRowView selectedGuest;
 
         public ChangeInfAboutGuest()
         {
@@ -28,7 +29,7 @@ namespace HotelAIS.Windows.Reception
         {
             DataRowView selectedRoom = (DataRowView) GuestsData.SelectedItem;
             String valueOfItem = selectedRoom["ID"].ToString();
-            //GuestsData_OnCurrentCellChanged();
+            //GuestsDGuestsData_OnRowEditEnding;
         }
 
         private void UpdateTable()
@@ -45,52 +46,34 @@ namespace HotelAIS.Windows.Reception
 
         private void GuestsData_OnCurrentCellChanged(object sender, EventArgs e)
         {
-            MySqlConnect connect = new MySqlConnect();
-            connect.Open();
-
-            for (int i = 0; i < GuestsData.Items.Count; i++)
-            {
-                try
-                {
-                    currentGuest = GuestsData.Items[i] as DataRowView;
-                    int index = Convert.ToInt32(currentGuest["ID"].ToString());
-                    String fname = currentGuest["FirstName"].ToString();
-                    String sname = currentGuest["SecondName"].ToString();
-                    String mname = currentGuest["MiddleName"].ToString();
-                    int seria = Convert.ToInt32(currentGuest["Seria"].ToString());
-                    int nomer = Convert.ToInt32(currentGuest["Nomer"].ToString());
-                    int room = Convert.ToInt32(currentGuest["Room"].ToString());
-                    string sql = $"update guests set FirstName='{fname}', SecondName='{sname}', MiddleName='{mname}'," +
-                                 $"Seria={seria}, Nomer={nomer}, Room={room} where ID={index};";
-                    connect.Command(sql);
-                }
-                catch (Exception exception)
-                {
-                    // MessageBox.Show(exception.Message);
-                }
-            }
-
-            connect.Close();
-            UpdateTable();
+            selectedGuest = GuestsData.SelectedItem as DataRowView ;
+            
         }
 
         private void DeleteGuest_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                int index = Convert.ToInt32(currentGuest["ID"]);
-                string sql = $"DELETE FROM `guests` WHERE `guests`.`ID` = {index};";
-                MySqlConnect connect = new MySqlConnect();
-                connect.Open();
-                MySqlCommand cmd = connect.conn.CreateCommand();
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                UpdateTable();
+                if (selectedGuest!=null)
+                {
+                    int index = Convert.ToInt32(selectedGuest["ID"]);
+                    string sql = $"DELETE FROM `guests` WHERE `guests`.`ID` = {index};";
+                    MySqlConnect connect = new MySqlConnect();
+                    connect.Open();
+                    MySqlCommand cmd = connect.conn.CreateCommand();
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    UpdateTable();
+                }
+                else
+                {
+                    MessageBox.Show("Сначала выберите строку!", "Уведомление", MessageBoxButton.OK);
+                }
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Сначала выберите строку!", "Уведомление", MessageBoxButton.OK);
+                MessageBox.Show("Сначала выберите строку.", "Уведомление", MessageBoxButton.OK);
             }
         }
 
@@ -104,7 +87,37 @@ namespace HotelAIS.Windows.Reception
 
         private void RefreshButton_OnClick(object sender, RoutedEventArgs e)
         {
+            MySqlConnect connect = new MySqlConnect();
+            connect.Open();
+            for (int i = 0; i < GuestsData.Items.Count; i++)
+            {
+                try
+                {
+                    var currentGuest = GuestsData.Items[i] as DataRowView;
+                    int index = Convert.ToInt32(currentGuest["ID"].ToString());
+                    String fname = currentGuest["FirstName"].ToString();
+                    String sname = currentGuest["SecondName"].ToString();
+                    String mname = currentGuest["MiddleName"].ToString();
+                    int seria = Convert.ToInt32(currentGuest["Seria"].ToString());
+                    int nomer = Convert.ToInt32(currentGuest["Nomer"].ToString());
+                    int room = Convert.ToInt32(currentGuest["Room"].ToString());
+                    string sql = $"update guests set FirstName='{fname}', SecondName='{sname}', MiddleName='{mname}'," +
+                                 $"Seria={seria}, Nomer={nomer}, Room={room} where ID={index};";
+                    connect.Command(sql);
+                    
+                }
+                catch (Exception exception)
+                {
+                    // MessageBox.Show(exception.Message);
+                }
+                
+            }
+            MessageBox.Show("Обновление выполено успешно!");
+            
+            connect.Close();
             UpdateTable();
+            
         }
+        
     }
 }

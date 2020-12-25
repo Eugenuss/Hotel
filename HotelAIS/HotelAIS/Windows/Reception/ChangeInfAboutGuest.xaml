@@ -10,7 +10,7 @@
         <StackPanel>
             <ScrollViewer Height="700">
             <DataGrid x:Name="GuestsData" HeadersVisibility="All" AutoGenerateColumns="False" 
-                      SelectedCellsChanged="GuestsData_OnCurrentCellChanged">
+                      CurrentCellChanged="GuestsData_OnCurrentCellChanged" >
                     <DataGrid.Columns >
                         <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
                         <DataGridTextColumn Binding="{Binding FirstName}" Header="Имя"/>
@@ -28,7 +28,7 @@
                         Click="ReturnBut_Click"/>
                 <Button x:Name="DeleteGuest" Content="Удалить гостя" Margin="10,0,0,0" 
                         Click="DeleteGuest_Click"/>
-                <!-- <Button x:Name="RefreshButton" Content="Обновит" Click="RefreshButton_OnClick" /> -->
+                <Button x:Name="RefreshButton" Content="Обновить" Margin="10,0,0,0" Click="RefreshButton_OnClick" />
             </StackPanel>  
         </StackPanel>
     </Grid>
