@@ -53,5 +53,7 @@ namespace HotelAIS.Windows.Reception
                 Process.Start("Manual.pdf");
             }
         }
+
+        
     }
 }
