@@ -18,6 +18,7 @@
                         <DataGridTextColumn Binding="{Binding MiddleName}" Header="Отчество"/>
                         <DataGridTextColumn Binding="{Binding Seria}" Header="Серия паспорта"/>
                         <DataGridTextColumn Binding="{Binding Nomer}" Header="Номер паспорта"/>
+                        <DataGridTextColumn Binding="{Binding Room}" Header="Комната"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </ScrollViewer>    

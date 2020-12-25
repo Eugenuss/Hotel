@@ -59,8 +59,9 @@ namespace HotelAIS.Windows.Reception
                     String mname = currentGuest["MiddleName"].ToString();
                     int seria = Convert.ToInt32(currentGuest["Seria"].ToString());
                     int nomer = Convert.ToInt32(currentGuest["Nomer"].ToString());
+                    int room = Convert.ToInt32(currentGuest["Room"].ToString());
                     string sql = $"update guests set FirstName='{fname}', SecondName='{sname}', MiddleName='{mname}'," +
-                                 $"Seria={seria}, Nomer={nomer} where ID={index};";
+                                 $"Seria={seria}, Nomer={nomer}, Room={room} where ID={index};";
                     connect.Command(sql);
                 }
                 catch (Exception exception)
