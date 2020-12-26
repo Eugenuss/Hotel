@@ -31,8 +31,9 @@ namespace HotelAIS.Windows.Reception
                 string mname = Convert.ToString(TName.Text);
                 int seria = Convert.ToInt32(Series.Text);
                 int number = Convert.ToInt32(Number.Text);
-                string sql = "INSERT INTO guests (FirstName, SecondName, MiddleName, Seria, Nomer) VALUES" + 
-                             $" ('{fname}', '{sname}', '{mname}', {seria}, {number});";
+                int room = Convert.ToInt32(Room.Text);
+                string sql = "INSERT INTO guests (FirstName, SecondName, MiddleName, Seria, Nomer, Room) VALUES" + 
+                             $" ('{fname}', '{sname}', '{mname}', {seria}, {number}, {room});";
             
                 MySqlConnect conn = new MySqlConnect();
                 conn.Open();
@@ -126,6 +127,22 @@ namespace HotelAIS.Windows.Reception
                 Number.Text = "Номер паспорта";
             }
             
+        }
+        
+        private void RoomFocus(object sender, RoutedEventArgs e)
+        {
+            if (Room.Text == "Номер комнаты")
+            {
+                Room.Text = "";
+            }
+        }
+
+        private void RoomLost(object sender, RoutedEventArgs e)
+        {
+            if (Room.Text == "")
+            {
+                Room.Text = "Номер комнаты";
+            }
         }
         private void LoginWindow_OnKeyDown(object sender, KeyEventArgs e)
         {

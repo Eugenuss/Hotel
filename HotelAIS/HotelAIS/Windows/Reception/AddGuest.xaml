@@ -27,6 +27,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 
                 <TextBox Grid.Row="0" x:Name="FName"  
@@ -39,6 +40,8 @@
                          Margin="0,10,0,0" Text="Серия паспорта" GotFocus="SeriaFocus" LostFocus="SeriaLost"/>
                 <TextBox Grid.Row="4" x:Name="Number"   
                          Margin="0,10,0,0" Text="Номер паспорта" GotFocus="NomerFocus" LostFocus="NomerLost"/>
+                <TextBox Grid.Row="5" x:Name="Room"   
+                         Margin="0,10,0,0" Text="Номер комнаты" GotFocus="RoomFocus" LostFocus="RoomLost"/>
                 <Button Grid.Row="7" x:Name="AddGuestInTable" Margin="0,10,0,0" 
                          Content="Добавить гостя" 
                         Click="AddGuest_Click" />
