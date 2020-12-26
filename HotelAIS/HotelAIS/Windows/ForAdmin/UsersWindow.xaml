@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelAIS.Windows"
         mc:Ignorable="d"
-        Title="Пользователи" Height="450" Width="800" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
+        Title="Пользователи" Height="720" Width="800" WindowState="Maximized" KeyDown="LoginWindow_OnKeyDown">
     <Grid>
         <StackPanel>
             <ScrollViewer Height="500">
@@ -24,7 +24,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="AddUserButton" FontSize="28" Content="Добавить пользователя" Width="350" 
                         Margin="10, 0, 10, 0" Click="AddUserButton_Click" Height="45"/>
-                <Button x:Name="DelUserButton" FontSize="28"  Content="Удалить пользователя" Width="300" 
+                <Button x:Name="DelUserButton" FontSize="28"  Content="Удалить пользователя" Width="330" 
                         Margin="10, 0, 10, 0" Click="DelUserButton_Click" Height="45"/>
                 <Button x:Name="ReturnButton" FontSize="28" Content="Назад" Width="150" 
                         Margin="0, 0, 10, 0" Click="ReturnButton_Click" Height="45"/>
