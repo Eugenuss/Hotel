@@ -25,9 +25,12 @@
             <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Height="45" FontFamily="Tahoma"
                     Click="ReturnButton_Click" />
             <Button x:Name="GameButton" Content="Мини-игра" FontSize="28" Height="45" FontFamily="Tahoma"
-                    Click="GameButton_OnClick_Click" Margin = "0,100,0,0"/>
+                    Click="GameButton_OnClick_Click" Margin = "0,100,0,0" />
+            <Line Height="55"/>
+            <ProgressBar Minimum="0" Maximum="100" Value="0" Height="25" Name="GameLoad" />
             
         </StackPanel>
+                
     </Grid>
 </Window>
 

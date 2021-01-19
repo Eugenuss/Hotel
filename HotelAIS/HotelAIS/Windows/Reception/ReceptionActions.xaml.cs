@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
+
 
 namespace HotelAIS.Windows.Reception
 {
@@ -11,6 +13,7 @@ namespace HotelAIS.Windows.Reception
         {
             InitializeComponent();
         }
+        
 
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
@@ -57,8 +60,17 @@ namespace HotelAIS.Windows.Reception
 
         private void GameButton_OnClick_Click(object sender, RoutedEventArgs e)
         {
+            //TO DO
+            //real time fill
+            for (int i = 0; i < 100; i++)
+            {
+                GameLoad.Value = i;
+                Thread.Sleep(50);
+            }
+            
             Window game = new MiniGame();
             game.Show();
         }
+        
     }
 }
