@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 
@@ -54,6 +55,10 @@ namespace HotelAIS.Windows.Reception
             }
         }
 
-        
+        private void GameButton_OnClick_Click(object sender, RoutedEventArgs e)
+        {
+            Window game = new MiniGame();
+            game.Show();
+        }
     }
 }

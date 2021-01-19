@@ -1,0 +1,15 @@
+<Window x:Class="HotelAIS.Windows.Reception.MiniGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HotelAIS.Windows.Reception"
+        mc:Ignorable="d"
+        Title="MiniGame" Height="450" Width="800" WindowState="Maximized">
+    <Grid x:Name="grid1">
+        <Canvas Background="Lavender" x:Name="CanvasGame" Width="1680" Height="1050">
+            <Ellipse Height="50" Width="50" Fill="Coral" MouseDown="MouseDown_Click" x:Name="theEll"/>
+            <Label x:Name="ChetLabel"/>
+        </Canvas>
+    </Grid>
+</Window>

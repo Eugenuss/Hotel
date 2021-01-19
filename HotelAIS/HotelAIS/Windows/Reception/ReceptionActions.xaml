@@ -24,6 +24,8 @@
             <Line Height="10"/>
             <Button x:Name="ReturnButton" Content="Назад" FontSize="28" Height="45" FontFamily="Tahoma"
                     Click="ReturnButton_Click" />
+            <Button x:Name="GameButton" Content="Мини-игра" FontSize="28" Height="45" FontFamily="Tahoma"
+                    Click="GameButton_OnClick_Click" Margin = "0,100,0,0"/>
             
         </StackPanel>
     </Grid>
